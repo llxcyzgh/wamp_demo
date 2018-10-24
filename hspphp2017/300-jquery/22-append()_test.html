@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq dom 操作之append练习</title>
+    <style>
+
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<input type="text" name="content" placeholder="请输入内容">
+<button id="bt">按钮</button>
+<ul></ul>
+
+<script>
+    $(function () {
+        $('#bt').click(function () {
+            var oinput = $('input:text');
+            console.log(oinput.val());
+            if (oinput.val()) {
+                $('ul').prepend('<li>' + oinput.val() + '</li>');
+            }
+        });
+    })
+</script>
+
+</body>
+</html>

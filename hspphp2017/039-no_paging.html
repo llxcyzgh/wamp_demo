@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页显示</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 500px;
+        }
+        th,td{
+            border: 1px solid #000;
+        }
+        td{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>序号</th>
+        <th>商品名称</th>
+        <th>商品价格</th>
+    </tr>
+
+    <?php foreach($goods_list as $goods):?>
+    <tr>
+        <td><?php echo $goods['goods_id'];?></td>
+        <td><?php echo $goods['goods_name'];?></td>
+        <td><?php echo $goods['shop_price'];?></td>
+    </tr>
+    <?php endforeach;?>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示和隐藏</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('.bt').click(function () {
+                // $('#outer').hide(1000).show(1000);
+                $('#outer').toggle(1000);
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div id="outer"></div>
+<button class="bt">点击</button>
+
+<!--
+$(selector).show(speed,easing,callback)
+
+speed 可选。规定显示效果的速度。
+可能的值：毫秒 "slow" "fast"
+easing 	可选。规定在动画的不同点上元素的速度。
+默认值为 "swing"。
+可能的值：
+"swing" - 在开头/结尾移动慢，在中间移动快
+"linear" - 匀速移动
+callback 	可选。show() 方法执行完之后，要执行的函数。
+
+-->
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件类型</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            $('a').click(function (e) {
+                // e.preventDefault();
+                return false;
+            });
+
+        });
+    </script>
+</head>
+<body>
+<a href="http://www.hao123.com" target="_blank">这是一个链接</a>
+
+<!--
+默认阻止: 两种方法:
+1.传统方法: return false
+2.jq方法 preventDefault()
+-->
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告滚动效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .ad_left {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .ad_right {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .ad > span {
+            position: absolute;
+            top: -5px;
+            right: 0;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div>
+    <img src="image/05-longpic.png" alt="" class="main">
+</div>
+<div class="ad ad_left">
+    <img src="image/01-typescript.png" alt="">
+    <span>&times;</span>
+</div>
+<div class="ad ad_right">
+    <img src="image/01-nodejs.png" alt="">
+    <span>&times;</span>
+</div>
+
+
+<script>
+    $(function () {
+        function scrollad() {
+            var owheight = $(window).height();// 获取整个窗口的高度
+            var oadheight = $('.ad').height();// 获取广告的高度
+            var oad = $(window).scrollTop() + (owheight - oadheight) / 2;// 广告的位置
+            $('.ad').stop().animate({top: oad});
+            // console.log(owheight);
+            // console.log(oadheight);
+        }
+
+        scrollad();
+        $(window).scroll(scrollad);// scroll: 随着滚动条的滚动事件
+    })
+</script>
+</body>
+</html>

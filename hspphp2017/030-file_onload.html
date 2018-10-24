@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>move_uploaded-file</title>
+    <style>
+        table {
+            width: 500px;
+            border-collapse: collapse;
+            border: 1px solid #000;
+        }
+
+        tr, td {
+            border: 1px solid #000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!--表单上传到 030-file_onload.php-->
+<form action="030-file_onload.php" method="post" enctype="multipart/form-data">
+    <table>
+        <caption>头像上传</caption>
+        <tr>
+            <td>请选择头像:</td>
+            <td><input type="file" name="user_pic"></td>
+        </tr>
+        <tr>
+            <td>30-...php</td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+
+<br>
+<br>
+<br>
+
+<!--表单上传到 031-file_onload_size.php  限制文件大小-->
+<form action="031-file_onload_size.php" method="post" enctype="multipart/form-data">
+    <table>
+        <caption>文件上传</caption>
+        <tr>
+            <td>请选择文件:</td>
+            <td><input type="file" name="user_file"></td>
+        </tr>
+        <tr>
+            <td>31-...php</td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+
+<br>
+<br>
+<br>
+
+<!--表单上传到 032-file_onload_size.php  限制文件大小-->
+<form action="032-file_onload_size_rename2.php" method="post" enctype="multipart/form-data">
+    <table>
+        <caption>文件上传</caption>
+        <tr>
+            <td>请选择文件:</td>
+            <td><input type="file" name="user_file"></td>
+        </tr>
+        <tr>
+            <td>32-...php</td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+
+<br>
+<br>
+<br>
+
+<!--表单上传到 033-file_onload_size.php  分目录存储文件-->
+<form action="033-file_load_by_dir.php" method="post" enctype="multipart/form-data">
+    <table>
+        <caption>文件上传</caption>
+        <tr>
+            <td>请选择文件:</td>
+            <td><input type="file" name="user_file"></td>
+        </tr>
+        <tr>
+            <td>33-...php</td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+
+<br>
+<br>
+<br>
+
+<!--表单上传到 034-upload_file_type.php  限制上传文件类型-->
+<form action="034-upload_file_type.php" method="post" enctype="multipart/form-data">
+    <table>
+        <caption>文件上传</caption>
+        <tr>
+            <td>请选择文件:</td>
+            <td><input type="file" name="user_file"></td>
+        </tr>
+        <tr>
+            <td>34-...php</td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+
+<br>
+<br>
+<br>
+
+<!--表单上传到 037-test_class.php  限制上传文件类型-->
+<form action="037-test_class.php" method="post" enctype="multipart/form-data">
+    <table>
+        <caption>文件上传</caption>
+        <tr>
+            <td>请选择文件:</td>
+            <td><input type="file" name="cat_logo"></td>
+        </tr>
+        <tr>
+            <td>37-...php</td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+
+
+
+</body>
+</html>

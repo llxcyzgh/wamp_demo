@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>添加学生成绩</title>
+    <style type="text/css">
+    ul {
+        list-style: none;
+        /*background-color: #f0f;*/
+    }
+
+    ul li {
+        margin-bottom: 15px;
+    }
+
+    ul li:nth-last-of-type(1) {
+        margin-left: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- <form action="19-mark_test.php" method="post" onsubmit="return checkForm()"> -->
+    <form action="19-mark_test.php" method="post" onsubmit="return true">
+        <ul>
+            <li>
+                学生编号:
+                <input type="text" name="id" id="id" onfocus="focusFun(this)" onblur="blurFun(this)"><span></span>
+            </li>
+            <li>
+                学生姓名:
+                <input type="text" name="name" id="name" onfocus="focusFun(this)" onblur="blurFun(this)"><span></span>
+            </li>
+            <li>
+                语文成绩:
+                <input type="text" name="chinese" id="chinese" onfocus="focusFun(this)" onblur="blurFun(this)"><span></span>
+            </li>
+            <li>
+                数学成绩:
+                <input type="text" name="math" id="math" onfocus="focusFun(this)" onblur="blurFun(this)"><span></span>
+            </li>
+            <li>
+                英语成绩:
+                <input type="text" name="english" id="english" onfocus="focusFun(this)" onblur="blurFun(this)"><span></span>
+            </li>
+            <li>
+                <input type="submit" value="确认添加">
+            </li>
+        </ul>
+    </form>
+    <script type="text/javascript">
+    // 对表单获得焦点时进行提示
+    function focusFun(obj) {
+        // 对学生编号填写进行提示
+        if (obj.id == "id") {
+            obj.nextSibling.innerHTML = " 请输入学生编号";
+            obj.nextSibling.style.color = "green";
+            obj.nextSibling.style.fontSize = "12px";
+        }
+
+        // 对学生姓名填写进行提示
+        if (obj.id == "name") {
+            obj.nextSibling.innerHTML = " 请输入学生姓名";
+            obj.nextSibling.style.color = "green";
+            obj.nextSibling.style.fontSize = "12px";
+        }
+
+        // 对语文成绩填写进行提示
+        if (obj.id == "chinese") {
+            obj.nextSibling.innerHTML = " 请输入语文成绩";
+            obj.nextSibling.style.color = "green";
+            obj.nextSibling.style.fontSize = "12px";
+        }
+
+        // 对数学成绩填写进行提示
+        if (obj.id == "math") {
+            obj.nextSibling.innerHTML = " 请输入数学成绩";
+            obj.nextSibling.style.color = "green";
+            obj.nextSibling.style.fontSize = "12px";
+        }
+
+        // 对英语成绩填写进行提示
+        if (obj.id == "english") {
+            obj.nextSibling.innerHTML = " 请输入英语成绩";
+            obj.nextSibling.style.color = "green";
+            obj.nextSibling.style.fontSize = "12px";
+        }
+    }
+
+    // 对表单失去焦点时进行验证并提示
+    function blurFun(obj) {
+        // 学生编号失去焦点时,验证并提示
+        if (obj.id == "id") {
+            if (!obj.value) {
+                obj.nextSibling.innerHTML = " 学生编号不能为空";
+                obj.nextSibling.style.color = "red";
+                return false;
+            } else if (isNaN(obj.value) || obj.value.length != 10) {
+                obj.nextSibling.innerHTML = " 学生编号只能为十位数字";
+                obj.nextSibling.style.color = "red";
+                return false;
+            } else {
+                obj.nextSibling.innerHTML = " ✔";
+                return true;
+            }
+        }
+
+        // 学生姓名失去焦点时,验证并提示
+        if (obj.id == "name") {
+            if (!obj.value) {
+                obj.nextSibling.innerHTML = " 学生姓名不能为空";
+                obj.nextSibling.style.color = "red";
+                return false;
+            } else {
+                obj.nextSibling.innerHTML = " ✔";
+                return true;
+            }
+        }
+
+        // 学生语文、数学、英语成绩失去焦点时,验证并提示
+        if (obj.id == "chinese" || obj.id == "math" || obj.id == "english") {
+            if (!obj.value) {
+                obj.nextSibling.innerHTML = " 学生成绩不能为空";
+                obj.nextSibling.style.color = "red";
+                return false;
+            } else if (isNaN(obj.value) || obj.value < 0 || obj.value > 100) {
+                obj.nextSibling.innerHTML = " 学生成绩输入不正确";
+                obj.nextSibling.style.color = "red";
+                return false;
+            } else {
+                obj.nextSibling.innerHTML = " ✔";
+                return true;
+            }
+        }
+    }
+
+    // 表单提交时进行验证
+    function checkForm() {
+        if (blurFun(document.getElementById("id")) && blurFun(document.getElementById("name")) && blurFun(document.getElementById("chinese")) && blurFun(document.getElementById("math")) && blurFun(document.getElementById("english"))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    </script>
+</body>
+
+</html>

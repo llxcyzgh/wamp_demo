@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:first 和 :first-child 的区别</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            margin: 50px auto;
+        }
+
+
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<form action="">
+    <div>
+        <input type="text" id="search" name="search" value="请输入搜索内容">
+        <input type="submit" value="提交" id="tj">
+    </div>
+</form>
+
+
+<script>
+    $(function () {
+        // 搜索框聚焦状态
+        $('input[type=text]').focus(function () {
+            if ($(this).val() == "请输入搜索内容") {
+                $(this).val('');// 清空文本框内容
+            }
+        });
+        // 搜索框失去焦点状态
+        $('input[type=text]').blur(function () {
+            if ($(this).val() == "") {
+                $(this).val('请输入搜索内容');// 给文本框添加内容,不能用 = 赋值
+            }
+        });
+
+    })
+</script>
+</body>
+</html>

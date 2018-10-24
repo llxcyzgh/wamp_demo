@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评分事件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 0 auto;
+            width: 1500px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul > li {
+            float: left;
+            width: 60px;
+            height: 60px;
+            background: url('image/37-star.jpg') -66px 0 no-repeat;
+
+        }
+
+        .lightstar {
+            background: url('image/37-star.jpg') 0 0 no-repeat;
+        }
+
+        .dimstar {
+            background: url('image/37-star.jpg') -66px 0 no-repeat;
+        }
+
+        p {
+            clear: both;
+        }
+
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            var i = 0;
+            console.log(i);
+
+            $('ul li').bind({
+                mouseover: function () {
+                    $(this).nextAll().removeClass('lightstar');
+                    $(this).nextAll().addClass('dimstar');
+                    $(this).prevAll().addBack().removeClass('dimstar');
+                    $(this).prevAll().addBack().addClass('lightstar');
+                }, mouseout: function () {
+                    console.log(i);
+
+                    $('ul li').eq(i).nextAll().removeClass('lightstar');
+                    $('ul li').eq(i).nextAll().addClass('dimstar');
+                    $('ul li').eq(i).prevAll().addBack().removeClass('dimstar');
+                    $('ul li').eq(i).prevAll().addBack().addClass('lightstar');
+                }, click: function () {
+                    i = $(this).index();
+                    console.log(i);
+                    // $('ul li').eq(i).nextAll().removeClass('lightstar');
+                    $('ul li').eq(i).nextAll().addClass('dimstar');
+                    // $('ul li').eq(i).prevAll().addBack().removeClass('dimstar');
+                    $('ul li').eq(i).prevAll().addBack().addClass('lightstar');
+                    $('span').text(i + 1);
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<div>
+    <ul>
+        <li class="lightstar"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <h1>您的评分为<span class="myspan">1</span>分</h1>
+</div>
+
+
+</body>
+</html>

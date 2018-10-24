@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery AJAX_get</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#bt1').click(function () {
+                var username = $('input[name=username]').val();
+                var pwd = $('input[name=pwd]').val();
+                // console.log(username);
+                $.get(
+                    '47-jq_ajax_get.php',//url
+                    {username: username, pwd: pwd},//请求的数据
+                    function (res, sta, xhr) {//回调函数
+                        // res:返回值
+                        // sta:返回的状态
+                        // xhr:请求的对象 XMLHttpRequest
+                        // console.log('返回值是' + res);
+                        if (sta == 'success') {
+                            $('span').html(res);
+                        }
+                    }
+                );
+            });
+        })
+    </script>
+</head>
+<body>
+<label>用户名: <input type="text" name="username"><span></span></label><br><br>
+<label>密&emsp;码: <input type="password" name="pwd"></label><br><br>
+<input type="button" id="bt1" value="登陆">
+</body>
+</html>

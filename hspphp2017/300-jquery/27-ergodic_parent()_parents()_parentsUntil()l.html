@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq dom 操作之遍历节点之 祖先节点 </title>
+    <style>
+        /*.ancestor 后面的所有元素都应用该样式*/
+        .ancestor * {
+            /*overflow: hidden;*/
+            /*width: 500px;*/
+            display: block;
+            color: gray;
+            border: 1px solid #f00;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<div class="ancestor">
+    <div style="width: 500px">div元素(祖父)
+        <!--<div>div元素(祖父)-->
+        <ul>ul元素(父类)
+            <li>li元素(儿子)
+                <span>span元素(孙子)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<button id="bt">span的父类li起作用</button>
+<button id="bt2">span的祖先li ul div起作用</button>
+<button id="bt3">span的祖先直到ul起作用</button>
+
+
+<script>
+    $(function () {
+        $('#bt').click(function () {
+            $('span').parent().css('color', 'blue');
+        });
+
+        $('#bt2').click(function () {
+            // $('span').parents().css({'color':'blue','fontWeight':'bolder'});
+            $('span').parents().css({'color':'blue','font-weight':'bolder'});
+        });
+
+        $('#bt3').click(function () {
+            $('span').parentsUntil('div').css({'color':'blue','font-weight':'bolder','border':'5px dashed green'});
+        });
+
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件练习-下拉子菜单</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul.out > li {
+            float: left;
+            margin: 20px;
+        }
+
+         li > ul {
+            display: none;
+        }
+
+        .on {
+            display: block;
+        }
+
+
+    </style>
+    <script>
+        $(function () {
+//            $('ul.out > li').children().attr('class','');
+
+            $('ul.out > li').mouseover(function () {
+                $(this).children('ul').attr('class', 'on');
+                $(this).siblings().children().attr('class', '');
+            });
+
+            $('ul.out > li').mouseout(function () {
+                $(this).children().attr('class', '');
+                $(this).siblings().children().attr('class', '');
+            });
+
+        })
+    </script>
+</head>
+<body>
+
+<ul class="out">
+    <li>一级菜单1
+        <ul class="">
+            <li>二级菜单1</li>
+            <li>二级菜单2</li>
+            <li>二级菜单3</li>
+        </ul>
+    </li>
+    <li>一级菜单2
+        <ul>
+            <li>二级菜单1</li>
+            <li>二级菜单2</li>
+            <li>二级菜单3</li>
+        </ul>
+    </li>
+    <li>一级菜单3
+        <ul>
+            <li>二级菜单1</li>
+            <li>二级菜单2</li>
+            <li>二级菜单3</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

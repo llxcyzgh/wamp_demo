@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq dom 操作之append</title>
+    <style>
+        .mydiv {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<div class="mydiv">
+    <p>这是一个段落</p>
+</div>
+<button id="bt">按钮</button>
+
+<script>
+    $(function () {
+        $('#bt').click(function () {
+            $('.mydiv').append('<p>新追加的一个p段落--向后</p>');// 内部向后追加
+            $('.mydiv').prepend('<p>新追加的一个p段落--向前</p>');// 内部向前追加
+            $('<p>新追加的一个p段落--向后222</p>').appendTo('.mydiv');// 内部向后追加
+            $('<p>新追加的一个p段落--向前222</p>').prependTo('.mydiv');// 内部向前追加
+        });
+    })
+</script>
+<!--
+回顾js的dom
+createElement
+appendChild
+replacechild
+removechild
+
+
+jquery Dom 内部追加
+append()：父元素追加子元素，放到后面
+prepend()：父元素追加子元素，放在前面
+appendTo()：子元素追加到父元素后面    功能与上一个没有区别
+prependTo()：子元素追加到父元素前面   功能与上一个没有区别
+
+dom 外部追加
+after()：在指定的元素后面追加内容
+before()：在指定的元素前面追加内容
+insertAfter()：将添加的内容追加到指定的元素后面  功能与上一个没有区别
+insertBefore()：将添加的内容追加到指定的元素前面  功能与上一个没有区别
+
+dom 包裹节点
+wrap()     单独包裹
+wrapAll()  全部包裹
+unwrap()   取消包裹, 该操作将移除元素的父元素
+
+dom 替换节点
+replaceWith():把被选元素替换为新的内容。
+replaceAll():把被选元素替换为新的 HTML 元素。  功能与上一个没有区别
+
+dom 删除节点
+remove():直接删除节点,事件也没有了。标签内容都删除
+detach():直接删除节点，事件保留,标签内容都删除。
+empty():仅仅清空内容。清空标签的内容，标签保留
+
+dom 克隆节点
+clone()：克隆节点
+语法：
+$(selector).clone(true|false)
+true:规定需复制事件处理程序。
+false:默认。规定不复制事件处理程序。
+
+dom 遍历节点
+祖先是父、祖父、曾祖父等等。后代是子、孙、曾孙等等。同胞拥有相同的父。
+
+parent()：返回被选元素的直接父元素。
+parents()：返回被选元素的所有祖先元素，直到根元素html。
+parentsUntil()：返回两个被选元素之间的所有祖先元素。不包括until里面的元素
+
+children()：返回被选元素的所有直接子元素。
+find()：返回被选元素的后代元素，一路向下直到最后一个后代。   // find() 里面必须要有选择器,不能为空
+
+
+siblings()：返回被选元素的所有同胞元素。
+next()：返回被选元素的下一个同胞元素。这个函数只返回后面那个紧邻的同辈元素，而不是后面所有的同辈元素（可以使用nextAll）。
+nextAll()：返回被选元素的所有跟随的同胞元素。
+nextUntil()：返回介于的两个参数之间的所有跟随的同胞元素。
+prev()：返回被选元素的上一个同胞元素，同胞元素就是其他的元素。不一定是同一个标签。
+prevAll()：返回被选元素的所有前面的同胞元素。
+prevUntil()：返回介于的两个参数之间的所有前面的同胞元素。
+
+dom 过滤节点
+eq(index)：返回被选元素中带有指定索引号的元素。
+first()：返回被选元素的首个元素。
+last()：返回被选元素的最后一个元素
+
+hasClass(class) 检查当前的元素是否含有某个特定的类，如果有，则返回true。
+filter(expr) ：筛选出与指定选择器匹配的元素集合
+not(expr):筛选出与指定选择器不匹配的元素集合
+
+is(expr) ：用一个选择器来检查当前选择的元素集合,返回值是true和false.
+
+has(expr) has() 方法返回拥有匹配指定选择器的一个或多个元素在其内的所有元素。保留包含特定后代的元素，去掉那些不含有指定后代的元素。
+
+三个最基本的过滤方法是：first(), last() 和 eq()，它们允许您基于其在一组元素中的位置来选择一个特定的元素。
+eq(index):  index索引从0开始。
+其他过滤方法，比如 filter() 和 not() 允许您选取匹配或不匹配某项指定标准的元素。
+
+
+
+
+jQuery 遍历-其他
+addBack()：添加堆栈中元素集合到当前集合。
+end()：将匹配的元素列表变为前一次的状态。
+
+
+
+-->
+
+
+</body>
+</html>

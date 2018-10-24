@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>40-paging.html.php 分页显示</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+        }
+
+        td {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <?php echo $ul;?>
+    <table>
+        <!--表格标题栏-->
+        <tr>
+            <th>序号</th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+        </tr>
+        <!--表格内容栏-->
+        <?php foreach($goods_list as $goods):?>
+        <tr>
+            <td><?php echo $goods['goods_id'];?></td>
+            <td><?php echo $goods['goods_name'];?></td>
+            <td><?php echo $goods['shop_price'];?></td>
+        </tr>
+        <?php endforeach;?>
+    </table>
+    <?php echo $ul;?>
+</div>
+</body>
+</html>

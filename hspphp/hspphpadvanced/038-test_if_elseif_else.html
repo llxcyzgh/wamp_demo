@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>38-test_if_elseif_else</title>
+	<style type="text/css">
+		p{
+			font-size: 18pt;
+			color:red;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<?php 
+	$num_dog = rand(1,10);
+	$num_cat = rand(1,10);
+	if($num_cat > $num_dog):
+	?>
+    <p>猫猫势力强大</p>
+    <?php elseif($num_cat < $num_dog):?>
+    <p>狗狗势力强大</p>
+    <?php else:?>
+    <p>猫狗相等</p>
+    <?php endif;?>
+</body>
+</html>

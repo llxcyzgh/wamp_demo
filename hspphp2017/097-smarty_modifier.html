@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{$script|escape}
+
+<img src="{$book|escape:'url'}" alt="">
+<br>
+{$str}
+<br>
+{$str|truncate:12}
+<br>
+{$str|truncate:12:'---'}
+<br>
+
+
+</body>
+</html>

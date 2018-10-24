@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stopPropagation</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            width: 400px;
+            height: 400px;
+            background-color: #f00;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #inner {
+            width: 200px;
+            height: 200px;
+            background-color: #0f0;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+        }
+
+        #core {
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+        }
+
+
+    </style>
+    <script>
+        $(function () {
+            $('#outer').click(function (e) {
+                alert('这个是outer');
+            });
+            $('#inner').click(function (e) {
+                alert('这个是inner');
+                e.stopPropagation();
+            });
+            $('#core').click(function (e) {
+                alert('这个是core');
+                e.stopPropagation();
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<div id="outer">outer
+    <div id="inner">inner
+        <div id="core">core</div>
+    </div>
+</div>
+
+<!--
+阻止默认事件冒泡到父元素,阻止任何父事件程序被执行
+-->
+
+
+</body>
+</html>

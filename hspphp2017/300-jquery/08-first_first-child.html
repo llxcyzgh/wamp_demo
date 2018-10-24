@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:first 和 :first-child 的区别</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            text-indent: 2em;
+            width: 500px;
+            height: 80px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<button>按钮1- p:first</button>
+<button>按钮2 p:first-child</button>
+
+<p>一个段落</p>
+<div>
+    <p>div里面的一个段落</p>
+    <p>div里面的一个段落</p>
+</div>
+<p>一个段落</p>
+
+<div>
+    <p>div里面的一个段落</p>
+    <p>div里面的一个段落</p>
+</div>
+<p>一个段落</p>
+<p>一个段落</p>
+
+<div>
+    <h3>这是一个h3标题,如果first-child 不是同一类型,则不生效</h3>
+    <p>div里面的一个段落</p>
+    <p>div里面的一个段落</p>
+</div>
+
+
+<script>
+    $(function () {
+        // 按钮控制第一个p元素进行变色
+        $('button:nth-of-type(1)').click(function () {
+            $('p:first').css('background', 'yellow');
+        });
+        // 按钮控制第一个p元素,且p是其它元素的子元素进行变色
+        $('button:nth-of-type(2)').click(function () {
+            $('p:first-child').css('background', 'skyblue');
+        });
+
+
+    })
+</script>
+</body>
+</html>

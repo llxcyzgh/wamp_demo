@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+<form action="19-test2-2.php" method="post">第一个数 : <input type="number"
+	name="num1">
+<hr>
+运算符号 : <select name="oper">
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="*">*</option>
+	<option value="/">/</option>
+</select>
+<hr>
+第二个数 : <input type="number" name="num2">
+<hr>
+<input type="submit" value="计算">
+<hr>
+</form>
+</body>
+</html>
+
+<?php
+if($_SERVER['REQUEST_METHOD'] == "POST") {//让表单提交后再运算php代码
+$n1 = $_POST['num1'];
+$n2 = $_POST['num2'];
+$op = $_POST['oper'];
+//echo $op;
+switch($op){
+	case "+":$res = $n1 + $n2;break;
+	case "-":$res = $n1 - $n2;break;
+	case "*":$res = $n1 * $n2;break;
+	case "/":$res = $n1 / $n2;break;
+}
+echo "{$n1} {$op} {$n2} = $res";
+}
+?>

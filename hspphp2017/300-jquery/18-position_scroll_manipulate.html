@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq 对 位置(滚动) 的操作</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 300px;
+            overflow: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div>
+    定义和用法
+    overflow 属性规定当内容溢出元素框时发生的事情。
+    说明
+    这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要，用户代理都会提供一种滚动机制。因此，有可能即使元素框中可以放下所有内容也会出现滚动条。
+</div>
+<button>按钮</button>
+
+
+<!--
+scrollLeft() 方法设置或返回被选元素的水平滚动条位置。
+overflow:auto,scroll:滚动条
+
+scrollTop() 方法设置或返回被选元素的垂直滚动条位置。
+
+-->
+
+<script>
+    $(function () {
+        $('button').click(function () {
+            console.log($('div').scrollLeft());
+            console.log($('div').scrollTop());
+
+            $('div').scrollTop(120);
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>验证码在表单中的应用</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <form action="056-form_captcha_show.php" method="post" enctype="multipart/form-data">
+        <ul class="list-group">
+            <li class="list-group-item">请输入下面的验证码(区分大小写)</li>
+            <li class="list-group-item"><input type="text" name="captcha"></li>
+            <li class="list-group-item"><img src="056-form_captcha_show.php" alt=""></li>
+            <li class="list-group-item"><input type="button" value="提交"></li>
+        </ul>
+
+    </form>
+</div>
+</body>
+</html>
+

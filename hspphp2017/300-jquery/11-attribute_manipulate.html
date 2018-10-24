@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq 对标签属性的操作-获取图片的属性</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<img src="image/01-nodejs.png" alt="" width="150" class="pic">
+<button>点击</button>
+<script>
+    $(function () {
+        $('button').click(function () {
+            console.log($('img').attr('src'));// 获取属性值
+            $('img').attr({'width':'50'});// 更改属性值
+            $('img').removeAttr('width');// 删除属性
+
+        });
+    })
+</script>
+</body>
+</html>

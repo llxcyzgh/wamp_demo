@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery each函数</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+
+            $('button').click(function () {
+                var arr = ['red', 'green', 'blue'];
+                $.each(arr, function (k, v) {
+                    console.log('下标是: ' + k + ';值是: ' + v)
+                })
+            });
+
+            var obj = {name: '郭喜', from: '许昌', age: '39'};
+            $.each(obj, function (k, v) {
+                console.log(k + ':' + v + ' ');
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<p>jquery each函数可以遍历数组或对象</p>
+<button>点击测试</button>
+
+</body>
+</html>

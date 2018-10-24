@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq 对标签内容text的操作</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<p>这是一个<span style="color:red">段落</span></p>
+<button>点击</button>
+<script>
+    // 与 html() 相比 text() 只输出文本,也就是标签也按文本输出
+
+    $(function () {
+        $('button').click(function () {
+            console.log($('p').text());// 获取内容
+            $('p').text('<span>ab</span>cd');// 更改内容
+
+        });
+    })
+</script>
+</body>
+</html>

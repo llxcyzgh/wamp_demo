@@ -1,0 +1,22 @@
+<!-- 在html中使用php语句 -->
+<!-- 在apache的http.conf文件中添加
+    AddType application/x-httpd-php .html
+    AddType application/x-httpd-php .htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在html中使用php语句</title>
+</head>
+<body>
+<h1>能不能显示php语句</h1>
+<?php
+for($i=0;$i<5;$i++){
+	echo "php输出".$i;
+};
+?>
+
+<h3>php语句要想显示在html标签中, 必需使用 .php文件, 而不能是 .html文件</h3>
+</body>
+</html>

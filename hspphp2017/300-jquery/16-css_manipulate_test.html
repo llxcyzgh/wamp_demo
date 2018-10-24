@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq 对 css 的操作</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<ul>
+    <li>
+        <h3>事件</h3>
+        <ul class="hidden">
+            <li>政治</li>
+            <li>经济</li>
+            <li>军事</li>
+        </ul>
+    </li>
+    <li>
+        <h3>娱乐</h3>
+        <ul class="hidden">
+            <li>游戏</li>
+            <li>电影</li>
+            <li>电视</li>
+        </ul>
+    </li>
+    <li>
+        <h3>人物</h3>
+        <ul class="hidden">
+            <li>李xx</li>
+            <li>忌xx</li>
+            <li>张xx</li>
+        </ul>
+    </li>
+
+</ul>
+
+
+<script>
+    $(function () {
+        $('h3').click(function () {
+            $('ul>li>ul').addClass('hidden');// 添加类
+            $(this).next().removeClass('hidden');// 删除类
+        });
+    })
+</script>
+</body>
+</html>

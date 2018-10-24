@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq 对 css 的操作</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        .myclass {
+            border: 1px solid #f00;
+            font-size: 30px;
+            font-family: '华文行楷', "Microsoft Himalaya";
+        }
+
+        .mydd {
+            color: blue;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+<!--
+css 样式包括:行内,内部,外部[import和link]
+这里的jquery只对行内样式进行操作
+ps: 行内样式的优先级高于其它样式
+
+
+1. 获得样式 $('p').css('color');
+2. 设置一个样式 $('p').css('color','red');
+3. 设置多个样式 $('p').css({'color':'red','font-size':'30px','text-align':'center'});  用json格式
+
+4. 通过添加类名,获得该类的样式 addClass(className);
+5. 通过删除类名,取消本元素该类的样式 removeClass(className);
+6. 切换类名而切换样式  toggleClass(className);
+-->
+<dl>
+    <dt>花瓣美思</dt>
+    <dd class="mydd">高效率，高质量，无风险的在线设计服务平台</dd>
+    <dt>花瓣原创</dt>
+    <dd>花瓣用户采集的平面设计图片... 我的关注最新采集视频移动应用花瓣原</dd>
+    <dt>花瓣美女</dt>
+    <dd>国内最优质图片灵感库 已有数百万出众网友,用花瓣保存喜欢的图片。 用</dd>
+    <dt>花瓣采集工具</dt>
+    <dd>用花瓣网收集和分享你喜欢的一切。使用花瓣网采集工具,你可以方便保存任</dd>
+</dl>
+
+
+<button>点击</button>
+
+<script>
+    $(function () {
+        $('button').click(function () {
+            $('dt').addClass('myclass');// 添加类
+            $('dd:first').removeClass('mydd');// 删除类
+            $('dd:nth-of-type(2)').toggleClass('mydd');// 删除类
+        });
+    })
+</script>
+</body>
+</html>

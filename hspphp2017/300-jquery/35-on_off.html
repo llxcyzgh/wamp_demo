@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind多个事件 on_off</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .myclass {
+            color: red;
+            font-size: 50px;
+        }
+
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            $('div').on('mouseout mouseover', 'p', function () {
+                $(this).toggleClass('myclass');
+            });
+
+            $('#bt').click(function () {
+                $('div').off();// 取消绑定
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div>
+    <p>这是一个段落</p>
+</div>
+<br>
+<button id="bt">点击取消绑定</button>
+
+
+<!--
+delegate  和 on 类似, 只是参数顺序不一样
+-->
+</body>
+</html>

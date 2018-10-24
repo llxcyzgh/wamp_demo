@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery做图片点击加边框效果</title>
+    <style>
+        img {
+            width: 150px;
+            height: 75px;
+        }
+    </style>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script>
+        //      $(function () {  ..... })
+        //      $(document).ready(function () {  ..... })
+        //      window.onload = function(){}
+
+        // 当与其它js库发生冲突时,可以用 jQuery代替$
+        $(function () {
+            $('img').click(function () {
+                $(this).css('border', '5px solid tomato').siblings().css('border', '');
+            })
+        })
+    </script>
+
+</head>
+<body>
+<img src="./image/01-jqueryapi.png" alt="">
+<img src="./image/01-nodejs.png" alt="">
+<img src="./image/01-react.png" alt="">
+<img src="./image/01-typescript.png" alt="">
+
+<h3>js 7大数据类型</h3>
+<p>基本数据类型 number,string,boolean</p>
+<p>复合数据类型 array,object,</p>
+<p>特殊数据类型 undefined,null,</p>
+
+<h3>PHP 8大数据类型</h3>
+<p>基本数据类型 int,float,string,boolean</p>
+<p>复合数据类型 array,object</p>
+<p>特殊数据类型 null,resource</p>
+
+
+</body>
+</html>
+

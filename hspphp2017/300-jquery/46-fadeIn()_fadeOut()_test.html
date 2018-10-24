@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            overflow: scroll;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            $('.bt1').click(function () {
+                $('.div1').animate({
+                    height: '500px',
+                    width: '500px',
+                    opacity: '0.2',
+                    color: 'green'
+                }, 3000);
+                // $('.div1').hide();
+            });
+
+            $('.bt2').click(function () {
+                $('.div1').stop();
+            });
+
+            $('.bt3').click(function () {
+                $('.div1').animate({height: '100px', width: '100px'}, 3000);
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+<button class="bt1">单击运动</button>
+<button class="bt2">单击停止</button>
+<button class="bt3">单击重置</button>
+<div class="div1">
+    将进酒
+    <br>书法作品《将进酒》
+    <br>书法作品《将进酒》(13张)
+    <br>君不见，黄河之水天上来，奔流到海不复回。
+    <br>君不见，高堂明镜悲白发，朝如青丝暮成雪。
+    <br>人生得意须尽欢，莫使金樽空对月。
+    <br>天生我材必有用，千金散尽还复来。
+    <br>烹羊宰牛且为乐，会须一饮三百杯。
+    <br>岑夫子，丹丘生，将进酒，杯莫停。
+    <br>与君歌一曲，请君为我倾耳听。
+    <br>钟鼓馔玉不足贵，但愿长醉不复醒。
+    <br>古来圣贤皆寂寞，惟有饮者留其名。
+    <br>陈王昔时宴平乐，斗酒十千恣欢谑。
+    <br>主人何为言少钱，径须沽取对君酌。
+    <br>五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。
+</div>
+
+
+<!--
+jquery 不支持颜色的动画,
+可以用css3代替
+或者加载 jquery-ui 即可让jq 实现颜色动画
+
+-->
+</body>
+</html>

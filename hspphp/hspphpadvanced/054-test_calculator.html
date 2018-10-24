@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>myCal.html</title>
+</head>
+
+<body>
+    <h1>我的计算器</h1>
+    <form action="054-test_calculator.php" method="post" onsubmit="return checkForm()">
+        <label>第一个数:
+            <input type="text" id="num1" name="num1" onfocus="">
+        </label>
+        <br>
+        <br> 运算符号:
+        <select name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <br>
+        <br>
+        <label>第二个数:
+            <input type="number" id="num2" name="num2">
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="提交计算">
+    </form>
+    <script type="text/javascript">
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    function checkForm() {
+        var obj_num1 = $("num1");
+        var obj_num2 = $("num2");
+        var val_num1 = obj_num1.value;
+        var val_num2 = obj_num2.value;
+        // alert(val_num1);
+        // 输入不能为空
+        if (val_num1 == "" || val_num2 == "") {
+            alert("num1 和 num2 都不能为空");
+            return false;
+        } else if (isNaN(val_num1) || isNaN(val_num2)) {
+            alert("num1 和 num2 都必须是数字");
+            return false;
+        } else {
+            return true;
+        }
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq基本选择器</title>
+</head>
+<body>
+
+<!--
+回顾之前我们学过哪些CSS选择器？
+1)	id选择器	： #id
+相当于js:document.getElementById('id')
+
+2)	class选择器	： .class
+相当于js:document.getElementByClassName('class')
+
+3)	tag选择器	： tag
+相当于js:document.getElementByTagName('tagName')
+
+4) 组合选择器
+
+5) 特殊选择器 this,* 等
+this: 当前对象   this不要用引号包裹  $(this)
+*: 所有对象    $('*')
+
+6) 层次选择器
+后代选择器        父元素 后代元素
+子元素选择器      父元素>后代元素
+相邻元素选择器    我+邻居           我之后的紧临的一个
+兄弟元素选择器    我~兄弟元素       我之后的所有的兄弟元素
+
+7)过滤选择器
+:first      匹配找到的第一个元素
+:last       匹配找到的最后一个元素
+:even       匹配索引是偶数的所有元素,索引从0开始
+:odd        匹配索引是奇数的所有元素,索引从0开始
+:eq(index)  匹配索引等于index的所有元素,index索引从0开始,可以是负数
+:gt(index)  匹配索引大于index的所有元素,greaterthan
+:lt(index)  匹配索引小于index的所有元素,lessthan
+:header     匹配网页中的标题元素 h1-h6
+
+8) 子元素选择器
+nth-child    不限制类型(不同元素)第几个元素
+nth-of-type  限制类型(相同元素下)第几个元素
+
+nth-child(even)  匹配父元素下,索引值是偶数的子元素
+nth-child(odd)  匹配父元素下,索引值是奇数的子元素
+nth-child(index)  匹配父元素下,索引值是index的子元素,index从1开始
+
+
+:first 和 :first-child 的区别
+:last 和 :last-child 的区别
+
+9) 表单过滤选择器
+:input          所有的输入框
+:text      文本框
+:password  密码框
+:radio     单选框
+:checkbox  复选框
+:submit    提交按钮
+:reset     重置按钮
+:button    按钮
+:file      文件上传框
+
+表单对象属性
+:checked    $(':checkbox:checked')
+:selected   $(':option:selected')
+:enabled    $(':option:selected')
+:disabled   $(':option:selected')
+:visible    默认全部可见
+input:hidden  表单 type=hidden
+
+10) 属性选择器
+[attr]:选择具有attr属性的元素
+[attr=‘val’]:选择具有attr属性并且值是val的元素
+[attr！=‘val’]:选择具有attr属性并且值不是val的元素
+[attr^=‘val’]:选择具有attr属性并且值的开头是val的元素
+[attr$=‘val’]:选择具有attr属性并且值的结尾是val的元素
+[attr*=‘val’]:选择具有attr属性并且值的任何位置是val的元素
+[attr|=‘val’]:选择具有attr属性并且值val后面有连接符的元素
+[attr~=‘val’]:选择具有attr属性并且值val后面有空格的元素
+
+
+11) 其它选择器
+:has() 选择器选取所有包含一个或多个元素在其内的元素，匹配指定的选择器。  $('p:has(span)')
+:empty() 选择器选取空的元素。                    $('p:empty()')
+:parent() 过滤出有内容孩子的元素和empty相反。     $('p:parent()')
+:contains() 包含指定内容选择器。                 $('p:contains("人生")')
+:not() 选择器选取除了指定元素以外的所有元素。     $('p:not(.btn)')
+
+
+
+
+
+
+-->
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery extend 创建一个全局函数</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+
+            $.extend({
+                sum: function (x, y) {
+                    return x + y;
+                }, sub: function (x, y) {
+                    return x - y;
+                }
+            });
+
+            $('button').click(function () {
+                alert($.sum(5, 2));
+                alert($.sub(5, 2));
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<button>点击测试</button>
+
+</body>
+</html>

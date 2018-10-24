@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>搜索框中的自动提示</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
+    <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="./211-common.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <form action="212-ajax_search_prompt.php">
+        <input type="text" id="search" name="search">
+        <input type="submit">
+    </form>
+</div>
+
+<script>
+    var oInput = document.getElementById('search');
+    oInput.onblur = function () {
+        var keyword = this.value;
+        // alert(keyword);
+        $$.request({
+            method: 'POST',
+            url: '212-ajax_search_prompt.php',
+            data: 'keyword=' + keyword,
+            dataType: 'json',
+            success: function (result) {
+                console.log(result);
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

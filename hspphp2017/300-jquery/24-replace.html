@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq dom 操作之替换节点</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #f00;
+            margin: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<p>这是一个段落</p>
+<a href="">这是一个链接</a>
+<p>这是一个段落</p>
+<button id="bt">开始替换</button>
+<button id="bt2">开始全部替换</button>
+
+
+<script>
+    $(function () {
+        $('#bt').click(function () {
+            //
+            $('p').replaceWith('<a>p标签被替换成a标签</a>');
+        });
+
+        $('#bt2').click(function () {
+            $('<h3>p标签被替换为h3标签</h3>').replaceAll('p');
+        });
+
+
+    });
+</script>
+
+</body>
+</html>

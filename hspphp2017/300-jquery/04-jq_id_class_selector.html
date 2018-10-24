@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>id和class选择器</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#bt').click(function () {
+                // id选择器
+                // 加一个样式
+                // $('#choose').css('border', '5px dashed pink');
+                // 加多个样式,用json格式来写
+                $('#choose').css({
+                    'border': '2px dashed pink',
+                    'color': 'blue',
+                    'font-weight': 'bolder'
+                });
+
+                // 类选择器   多选择器[组合选择器]
+                $('.p1,.gg').css('background-color', 'yellow');
+
+                // 标签选择器
+                $('button').css('background-color','skyblue');
+            });
+        })
+    </script>
+</head>
+<body>
+<p class="p1">最喜欢的哪个网站</p>
+<ul id="choose">
+    <li>qq</li>
+    <li class="gg">Google</li>
+    <li>taobao</li>
+</ul>
+<button id="bt">单击给上面的ul列表加边框</button>
+</body>
+</html>

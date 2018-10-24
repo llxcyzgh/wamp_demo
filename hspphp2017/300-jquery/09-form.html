@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:first 和 :first-child 的区别</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<form action="">
+    <label>用户名: <input type="text" id="username" name="username"></label>
+    <br>
+    <label>密&emsp;码: <input type="password" id="pword" name="pword"></label>
+    <br>
+    性&emsp;别:
+    <label><input type="radio" name="gender" value="male"> 男</label>&emsp;
+    <label><input type="radio" name="gender" value="female"> 女</label>&emsp;
+    <label><input type="radio" name="gender" value="ladyboy"> 保密</label>&emsp;
+    <br>
+    爱&emsp;好:
+    <label><input type="checkbox" name="hobby" value="php"> php</label>&emsp;
+    <label><input type="checkbox" name="hobby" value="java"> java</label>&emsp;
+    <label><input type="checkbox" name="hobby" value="python"> python</label>&emsp;
+    <br>
+    <!--<button id="bt1">按钮1</button>-->
+    <!--button 按钮不要在form表单中使用-->
+    <input type="button" id="bt1" value="按钮1">
+    <input type="submit" value="提交" id="tj">
+</form>
+
+
+<script>
+    $(function () {
+        $('#bt1').click(function () {
+            $(':radio').css('outline', '2px solid red');
+        });
+
+        $('#tj').click(function () {
+            $(':radio').css('outline', '2px solid red');
+        });
+    })
+</script>
+</body>
+</html>

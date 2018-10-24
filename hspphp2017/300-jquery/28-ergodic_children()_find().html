@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq dom 操作之遍历节点之 后代节点 </title>
+    <style>
+        /*.ancestor 后面的所有元素都应用该样式*/
+        .ancestor * {
+            /*overflow: hidden;*/
+            /*width: 500px;*/
+            display: block;
+            color: gray;
+            border: 1px solid #f00;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<div class="ancestor">
+    <div style="width: 500px">div元素(祖父)
+        <ul>ul元素(父类)
+            <li>li元素(1儿子)
+                <span>span元素(孙子)</span>
+            </li>
+            <li>li元素(2儿子)
+                <span>span元素(孙子)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<button id="bt">ul的直接子元素li起作用</button>
+<button id="bt2">ul的后代li span起作用</button>
+
+
+<script>
+    $(function () {
+        $('#bt').click(function () {
+            $('ul').children().css('color', 'blue');
+        });
+
+        $('#bt2').click(function () {
+            // find() 里面必须要有选择器,不能为空
+            $('ul').find('li,span').css({'color': 'blue', 'font-weight': 'bolder'});
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

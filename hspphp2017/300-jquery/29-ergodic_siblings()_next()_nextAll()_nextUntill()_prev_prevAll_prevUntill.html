@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq dom 操作之遍历节点之 兄弟节点 </title>
+    <style>
+        /*.ancestor 后面的所有元素都应用该样式*/
+        .ancestor * {
+            /*overflow: hidden;*/
+            /*width: 500px;*/
+            display: block;
+            color: gray;
+            border: 1px solid #f00;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+
+<h2>世界十大名著</h2>
+<p>《战争与和平》</p>
+<p>《巴黎圣母院》</p>
+<p>《童年》</p>
+<p>《呼啸山庄》</p>
+<div>这是一个div</div>
+<!--<div>这是第二个div</div>-->
+<p>《大卫·科波菲尔》</p>
+<p>《红与黑》</p>
+<p>《悲惨世界》</p>
+<p class="anna">《安娜·卡列尼娜》</p>
+<p>《约翰·克利斯朵夫》</p>
+<p>《飘》</p>
+
+<button id="bt">h2的同胞元素p</button>
+<button id="bt2">div的下一个同胞元素p</button>
+<button id="bt3">div的后面的全部同胞元素p</button>
+<button id="bt4">div的后面的直到anna的全部同胞元素p</button>
+
+
+<script>
+    $(function () {
+        $('#bt').click(function () {
+            // $('h2').siblings('p').css('color', 'blue');
+            $('h2').siblings().css('color', 'blue');
+        });
+
+        $('#bt2').click(function () {
+            // $('div').next('p').css({'color': 'blue', 'font-weight': 'bolder'});
+            $('div').next().css({'color': 'blue', 'font-weight': 'bolder'});
+        });
+
+        $('#bt3').click(function () {
+            // $('div').next('p').css({'color': 'blue', 'font-weight': 'bolder'});
+            $('div').nextAll().css({'color': 'skyblue'});
+        });
+
+
+        $('#bt4').click(function () {
+            $('div').nextUntil('.anna').css({'color': 'skyblue'});
+        });
+
+
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq dom 操作之克隆节点</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #f00;
+            margin: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<p>这是一个段落1</p>
+<a href="">这是一个链接</a>
+<p>这是一个段落2</p>
+<button id="bt">开始克隆clone(false)</button>
+<button id="bt2">开始克隆clone(true)</button>
+
+
+<script>
+    $(function () {
+        $('#bt').click(function () {
+            // $('p:eq(1)').clone().appendTo('body');// 默认false
+            $('p:eq(1)').clone(false).appendTo('body');
+        });
+
+        $('#bt2').click(function () {
+            $('p:eq(1)').clone(true).appendTo('body');
+        });
+
+        $('p').click(function () {
+            $(this).animate({fontSize: '+=10px'});// 动画,每单击一次,字体变大10px
+        });
+
+
+    });
+</script>
+
+</body>
+</html>

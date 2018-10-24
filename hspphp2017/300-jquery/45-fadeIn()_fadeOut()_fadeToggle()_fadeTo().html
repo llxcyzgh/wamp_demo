@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            width: 500px;
+            border: 2px solid #7f7be8;
+            background-color: #12fcff;
+            cursor: pointer;
+        }
+
+        .div2 {
+            width: 500px;
+            border: 2px solid #e89323;
+            background-color: #25280a;
+        }
+
+        .close {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('.div1').click(function () {
+                // $('.div2').slideDown();
+                $('.div2').fadeToggle(6000);
+            });
+
+            $('.close').click(function () {
+                $('.div2').fadeOut(3000);
+            });
+
+            $('button').click(function () {
+                $('.div2').fadeTo(3000,0.5);
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+<div class="div1">itbull.cn</div>
+<div class="div2">
+    <span class="close">[x]</span>
+    <br>
+    <p> balabalabalababalabalabalab
+        abalabalabalababalabalabalabab
+        alabalabalababalabalabalababalaba
+        labalababalabbalabalabalababalabalaba
+        lababalabbalabalabalababalabalabalaba
+        balabbalabalabalababalabalabala
+        babalabalabalababalabalabalababalabalabalaba</p>
+</div>
+<button>点击</button>
+
+<!--
+
+
+-->
+</body>
+</html>

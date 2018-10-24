@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq dom 操作之删除节点</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #f00;
+            margin: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<p>这是一个段落</p>
+<a href="">这是一个链接</a>
+<p>这是一个段落</p>
+<button id="bt">开始替换</button>
+<button id="bt2">开始全部替换</button>
+
+
+<script>
+    $(function () {
+        $('#bt').click(function () {
+            $('p').remove();// 删除内容,标签,事件
+            $('p').detach();// 删除内容,标签,        保留事件
+            $('p').empty();// 删除内容,              保留标签和事件
+        });
+
+
+
+    });
+</script>
+
+</body>
+</html>

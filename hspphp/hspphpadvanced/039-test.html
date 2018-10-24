@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>在html中写php</title>
+</head>
+<body> 
+  <!-- $day = date('l'); 表示monday,tuesday... -->
+    <?php $day = date('w');?>
+    <?php switch($day):case 1:?>
+    <h3>星期一</h3>
+    <?php break;case 2:?>
+    <h3>星期二</h3>
+    <?php break;case 4+9-10:?>
+    <h3>星期三</h3>
+    <?php break;case 4:?>
+    <h3>星期四</h3>
+    <?php break;case 5:?>
+    <h3>星期五</h3>
+    <?php break;case 6:?>
+    <h3>星期六</h3>
+    <?php break;case 0:?>
+    <h3>星期日</h3>
+    <?php endswitch;?>    
+</body>
+</html>
+
+<!-- 
+switch 细节
+1.当一个case语句中的值和switch表达式的值匹配时,php才开始执行语句
+2.直到switch的程序结束或者遇到第一个break语句为止.如果不在case的语句段后写上break的话,php将继续执行下一个case中的语句段
+3.一个case的特例是default,它匹配了任何和其它case都不匹配的情况
+!4.case表达式可以是任何表达式,即整型或浮点型,字符串或布尔值,数组,null
+5.允许使用分号代替case语句后的冒号(不推荐)
+6.在一个case中的语句可以为空,这样只不过将控制转移到了下一个case中的语句
+ -->

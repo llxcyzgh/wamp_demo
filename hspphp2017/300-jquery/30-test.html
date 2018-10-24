@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝广告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /*整个的块*/
+        .ad {
+            width: 250px;
+            height: 250px;
+            border: 1px solid pink;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        /*左侧文字*/
+        .ad ol {
+            width: 48px;
+            float: left;
+        }
+
+        .ad ol li {
+            height: 27px;
+            line-height: 27px;
+            font-size: 12px;
+            border-right: 1px solid pink;
+            border-bottom: 1px solid pink;
+            text-align: center;
+        }
+
+        /*左侧的默认只有一个背景图片*/
+        .ad ol li.on {
+            background: url(image/30/bg.gif);
+        }
+
+        /*默认所有图片都隐藏*/
+        .ad ul li {
+            display: none;
+        }
+
+        /*只有一个图片是显示的*/
+        .ad ul li.on {
+            display: block;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            var timer = 100;//定时器对象
+            console.log(timer);
+
+            // var timer = null;//定时器对象[全局变量]
+            var index = 0;//每个元素的索引值变量
+
+            //鼠标经过
+            $('.ad ol li').mouseover(function () {
+                console.log(timer);
+                clearInterval(timer);//清除时钟对象
+                $(this).addClass('on').siblings().removeClass('on');//当前元素应用背景图片
+                index = $(this).index();//获取当前的索引值
+                $('.ad ul li').eq(index).addClass('on').siblings().removeClass('on');
+            });
+
+            // 鼠标离开
+            $('.ad').mouseout(function () {
+                console.log(timer);
+
+                clearInterval(timer);//清除时钟对象
+                timer = setInterval(function () {
+                    index++;
+                    if (index > $('.ad ol li').length) {
+                        index = 0;
+                    }
+                    //左侧文字的背景图片在切换，当前应用背景图片，其他同胞元素没有应用背景图片
+                    $('.ad ol li').eq(index).addClass('on').siblings().removeClass('on');
+                    //右侧的图片在切换，当前应用图片，其他同胞元素没有应用图片
+                    $('.ad ul li').eq(index).addClass('on').siblings().removeClass('on');
+
+                }, 1000);
+                console.log(timer);
+
+            });
+
+            /*
+                        $('.ad ol li').mouseover(function () {
+                            clearInterval(timer);//清除时钟对象
+                        });
+            */
+
+            $('.ad').mouseout();//默认触发鼠标离开事件
+
+        });
+    </script>
+</head>
+<body>
+<div class="ad">
+    <ol>
+        <li class="on">女靴</li>
+        <li>雪地靴</li>
+        <li>冬裙</li>
+        <li>呢大衣</li>
+        <li>毛衣</li>
+        <li>棉服</li>
+        <li>女裤</li>
+        <li>羽绒服</li>
+        <li>牛仔裤</li>
+    </ol>
+    <ul>
+        <li class="on"><a href=""><img src="image/30/女靴.jpg" alt=""></a></li>
+        <li><a href=""><img src="image/30/雪地靴.jpg" alt=""></a></li>
+        <li><a href=""><img src="image/30/冬裙.jpg" alt=""></a></li>
+        <li><a href=""><img src="image/30/呢大衣.jpg" alt=""></a></li>
+        <li><a href=""><img src="image/30/毛衣.jpg" alt=""></a></li>
+        <li><a href=""><img src="image/30/棉服.jpg" alt=""></a></li>
+        <li><a href=""><img src="image/30/女裤.jpg" alt=""></a></li>
+        <li><a href=""><img src="image/30/羽绒服.jpg" alt=""></a></li>
+        <li><a href=""><img src="image/30/牛仔裤.jpg" alt=""></a></li>
+    </ul>
+</div>
+</body>
+</html>

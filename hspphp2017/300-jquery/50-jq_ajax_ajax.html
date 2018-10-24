@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery AJAX_ajax</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+
+            $('input[name=username]').keyup(function () {
+                var username = $('input[name=username]').val();
+                $.ajax({
+                    url: '50-jq_ajax_ajax.php',//url
+                    data: {username: username},//请求的数据
+                    dataType: 'html',
+                    type: 'post',
+                    success: function (res, sta, xhr) {//回调函数
+                        // res:返回值
+                        // sta:返回的状态
+                        // xhr:请求的对象 XMLHttpRequest
+                        // console.log('返回值是' + res);
+                        if (sta == 'success') {
+                            $('span').html(res.substr(1));
+                        }
+                    }
+
+
+                });
+
+            });
+        });
+    </script>
+</head>
+<body>
+<label>用户名: <input type="text" name="username"><span></span></label><br><br>
+<label>密&emsp;码: <input type="password" name="pwd"></label><br><br>
+<input type="button" id="bt1" value="登陆">
+</body>
+</html>
+
+$.ajax({
+    type: 'POST',
+    url: "<{:url('system/index')}>",
+    data: $('.myform').serialize(),
+    dataType: 'json',
+    success: function (data) {
+        if (data.status == 1) {
+            alert(data.message);
+            window.location.reload();
+        } else {
+            alert(data.message);
+            window.location.reload();
+        }
+    }
+})

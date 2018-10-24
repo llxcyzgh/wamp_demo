@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+小名是: {$name}
+<br>
+真名是: {$true_name}
+<br>
+<!--引入具体的配置文件-->
+{config_load file="img.conf"}
+孙艺珍照片: <img src="{#img_url#}1.png" alt="">
+<br>
+孙艺珍照片: <img src="{#img_url#}2.png" alt="">
+<br>
+孙艺珍照片: <img src="{#img_url#}3.png" alt="">
+</body>
+</html>

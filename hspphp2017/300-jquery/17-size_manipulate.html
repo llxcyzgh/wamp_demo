@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq 对 尺寸 的操作</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            /*box-sizing: border-box;*/
+            width: 200px;
+            height: 200px;
+            padding: 60px;
+            border: 40px solid #000;
+            margin: 80px;
+        }
+    </style>
+</head>
+<body>
+
+<div></div>
+<button>按钮</button>
+
+
+<!--
+（1）width()：方法设置或返回元素的宽度（不包括内边距、边框或外边距）。
+（2）height()：方法设置或返回元素的高度（不包括内边距、边框或外边距）。
+（3）innerWidth() 方法返回元素的宽度（包括内边距）。
+（4）innerHeight() 方法返回元素的高度（包括内边距）。
+（5）outerWidth() 方法返回元素的宽度（包括内边距和边框）。
+（6）outerHeight() 方法返回元素的高度（包括内边距和边框）。
+（7）outerWidth(true) 方法返回元素的宽度（包括内边距和边框和外边距）。
+（8）outerHeight(true) 方法返回元素的高度（包括内边距和边框和外边距）。
+-->
+
+<script>
+    $(function () {
+        $('button').click(function () {
+            var odiv = $('div');
+            var str = '';
+            console.log('div的width  &emsp;' + $('div').width());
+            console.log('div的height  &emsp;' + $('div').height());
+
+            console.log('div的innerWidth  &emsp;' + $('div').innerWidth());
+            console.log('div的innerHeight  &emsp;' + $('div').innerHeight());
+
+            console.log('div的outerWidth  &emsp;' + $('div').outerWidth());
+            console.log('div的outerheight  &emsp;' + $('div').outerHeight());
+
+            console.log('div的outerWidth(true)  &emsp;' + $('div').outerWidth(true));
+            console.log('div的outerHeight(true)  &emsp;' + $('div').outerHeight(true));
+
+            str = str +
+                'div的width  &emsp;' + odiv.width() + '<br>' +
+                'div的height  &emsp;' + odiv.height() + '<br>' +
+                'div的innerWidth  &emsp;' + odiv.innerWidth() + '<br>' +
+                'div的innerHeight  &emsp;' + odiv.innerHeight() + '<br>' +
+                'div的outerWidth  &emsp;' + odiv.outerWidth() + '<br>' +
+                'div的outerHeight  &emsp;' + odiv.outerHeight() + '<br>' +
+                'div的outerWidth(true)  &emsp;' + odiv.outerWidth(true) + '<br>' +
+                'div的outerHeight(true)  &emsp;' + odiv.outerHeight(true) + '<br>';
+
+
+            odiv.html(str);
+        });
+    })
+</script>
+</body>
+</html>

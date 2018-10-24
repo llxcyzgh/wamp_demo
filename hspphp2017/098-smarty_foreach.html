@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<table>
+    {foreach $goods as $k=>$v}
+    <tr>
+        <td>{$v['goods_id']}</td>
+        <td>{$v.goods_name}</td>
+    </tr>
+    {foreachelse}
+    <tr>
+        <td>没有找到数据</td>
+    </tr>
+    {/foreach}
+</table>
+
+{for $i=0 to 6}
+{$i}<br>
+{/for}
+<hr>
+{for $i=0 to 6 step=3}
+{$i}<br>
+{/for}
+
+<hr>
+{if $money>5000}
+    好吃好喝<br>
+{elseif $money>3000}
+    吃的
+{else}
+    没吃没喝
+{/if}
+
+<hr>
+{include}
+
+
+</body>
+</html>

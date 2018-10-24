@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery each方法</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+
+            $('button').click(function () {
+
+                $('input:checkbox:checked').each(function (index, event) {
+                    $('span').append($(this).val() + '&emsp;');
+                })
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<h3>选中的书名有:<span></span></h3>
+<label><input type="checkbox" name="book" value="xyj">西游记</label><br>
+<label><input type="checkbox" name="book" value="hlm">红楼梦</label><br>
+<label><input type="checkbox" name="book" value="shz">水浒传</label><br>
+<label><input type="checkbox" name="book" value="sgyy">三国演义</label><br>
+
+<br>
+<button>点击测试</button>
+
+</body>
+</html>

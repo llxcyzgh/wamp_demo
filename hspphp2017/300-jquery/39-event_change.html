@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件-change</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            $('select').change(function () {
+                console.log('地点是' + $(this).val());
+            });
+        })
+    </script>
+</head>
+<body>
+<select name="province" id="province">
+    <option value="anhui">安徽</option>
+    <option value="beijing">北京</option>
+    <option value="shanghai">上海</option>
+    <option value="guangzou">广州</option>
+    <option value="senzhen">深圳</option>
+</select>
+
+<input type="button" id="bt" value="单击">
+</body>
+</html>

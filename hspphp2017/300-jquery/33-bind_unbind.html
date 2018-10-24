@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind多个事件 bind_unbind</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .myclass {
+            color: red;
+            font-size: 50px;
+        }
+
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            $('p').bind('mouseout mouseover', function () {
+                $(this).toggleClass('myclass');
+            });
+
+            $('#bt').click(function () {
+                $('p').unbind();// 取消绑定
+            });
+
+        });
+    </script>
+</head>
+<body>
+<p>这是一个段落</p>
+<br>
+<button id="bt">点击取消绑定</button>
+
+</body>
+</html>

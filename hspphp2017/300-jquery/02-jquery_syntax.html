@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jq语法</title>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#bt1').click(function () {
+                $('img').hide();// 图片隐藏
+            });
+            $('#bt2').click(function () {
+                $('img').show();// 图片显示
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="button" id="bt1" value="单击隐藏">
+<input type="button" id="bt2" value="单击显示">
+<br>
+<img src="image/01-typescript.png" alt="">
+
+<!--
+$(selector).action()
+
+selector:选择器,就是css中的: 标签选择器,id选择器,类选择器等
+action():方法,特效,事件
+
+jquery 代码的实现
+第一步:引入jquery-3.2.1.min.js框架文件[下载到本地的或者cdn的(内容分发网络)]
+第二步: 写出框架         $(function () {.... })  或 $(document).ready(function(){ .... })
+第二步注意: jq可以加载多个框架,而js的 window.onload=function(){ ... } 只会加载最后一个; 原因是 onload是在全部文件、图片等资源加载完后才会加载,而 ready方法是在DOM树绘制完就开始加载
+
+-->
+</body>
+</html>

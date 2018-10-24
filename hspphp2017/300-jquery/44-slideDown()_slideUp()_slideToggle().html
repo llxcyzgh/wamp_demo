@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑入滑出</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            width: 500px;
+            border: 2px solid #7f7be8;
+            background-color: #12fcff;
+            cursor: pointer;
+        }
+
+        .div2 {
+            width: 500px;
+            border: 2px solid #e89323;
+            background-color: #f2ff41;
+        }
+
+        .close {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('.div1').click(function () {
+                // $('.div2').slideDown();
+                $('.div2').slideToggle();
+            });
+
+            $('.close').click(function () {
+                $('.div2').slideUp();
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+<div class="div1">itbull.cn</div>
+<div class="div2">
+    <span class="close">[x]</span>
+    <br>
+    <p> balabalabalababalabalabalab
+        abalabalabalababalabalabalabab
+        alabalabalababalabalabalababalaba
+        labalababalabbalabalabalababalabalaba
+        lababalabbalabalabalababalabalabalaba
+        balabbalabalabalababalabalabala
+        babalabalabalababalabalabalababalabalabalaba</p>
+</div>
+
+
+<!--
+
+
+-->
+</body>
+</html>
