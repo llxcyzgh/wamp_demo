@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>36-背景定位属性</title>
+    <style>
+        div {
+            /*width: 5000px;*/
+            height: 5000px;
+        }
+        .box1{
+            /*background-image: url(image/ivychen.jpg);*/
+            /*background-repeat: repeat;*/
+            /*background-color: red;*/
+          /*  background-position: left top;        */
+          /*  background-position: right top;        */
+         /*   background-position: right center; */
+            /*background-position: center center;*/
+            /*background-position: right bottom;*/
+            /*background-position: left bottom;*/
+            /*background-position: 100px 200px;*/
+            /*background-position: -100px -100px;*/
+            background-image: url(image/20161215changtu2.jpg);
+            background-position: center 0;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.如何控制背景图片的位置？
+在CSS中有一个叫做background-position的属性，就是专门用于控制背景图片的位置
+
+2.格式：
+background-position: 水平方向 垂直方向;
+
+3.取值
+3.1具体的方位名词
+水平方向：left center right
+垂直方向：top center bottom
+
+3.2具体的像素
+例如：background-position: 100px 200px;
+记住一定要写单位，也就是一定要写px
+记住具体的像素是可以接收负数的
+
+注意点：
+同一个标签可以同时设置背景颜色和背景图片，如果颜色和图片同时存在，那么图片会覆盖颜色
+
+-->
+
+<div class="box1"></div>
+</body>
+</html>

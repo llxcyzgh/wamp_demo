@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>69-图片切换案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: gray;
+        }
+        div{
+            box-sizing: border-box;
+            width: 750px;
+            height: 315px;
+            margin: 20px auto;
+            /*border: 1px solid #000;*/
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        div ul{
+            list-style: none;
+            position: absolute;
+            left: 500px;
+            top: 280px;
+        }
+        div ul li{
+            float: left;
+            font-size:20px;
+            font-weight:bold;
+            width: 25px;
+            height: 25px;
+            margin-left: 2px;
+            background: rgba(0,0,0,0.3);
+            text-align: center;
+            line-height: 25px;
+        }
+    </style>
+    <script>
+        window.onload = init;
+        var cpc,obj,i;
+        function init() {
+            cpc = window.setInterval("changepic()", 1000);
+        }
+        var count = 1;
+        function changepic() {
+            obj = document.getElementById("image1");
+            /*var li1=document.getElementById("id1");
+            var li2=document.getElementById("id2");
+            var li3=document.getElementById("id3");
+            var li4=document.getElementById("id4");
+            var li5=document.getElementById("id5");
+            var li6=document.getElementById("id6");
+            var li7=document.getElementById("id7");
+            var li8=document.getElementById("id8");*/
+            count++;
+            i = count % 8;
+            if (i == 0) {
+                obj.src = "images/20170111_pic8_750x315.jpg";
+                li8.style.background="skyblue";
+              /*  li1.style.background="rgba(0,0,0,0.3)";
+                li2.style.background="rgba(0,0,0,0.3)";
+                li3.style.background="rgba(0,0,0,0.3)";
+                li4.style.background="rgba(0,0,0,0.3)";
+                li5.style.background="rgba(0,0,0,0.3)";
+                li6.style.background="rgba(0,0,0,0.3)";
+                li7.style.background="rgba(0,0,0,0.3)";*/
+            } else {
+                obj.src = "images/20170111_pic" + i + "_750x315.jpg";
+
+            }
+
+        }
+        function stopPic(){
+            window.clearInterval(cpc);
+        }
+        function startPic() {
+            cpc = window.setInterval("changepic()", 1000);
+        }
+        function changeBack(e){
+            i= e.innerHTML;
+//            i=lix;
+            obj.src="images/20170111_pic" + i + "_750x315.jpg";
+            e.style.background="skyblue";
+            window.clearInterval(cpc);
+
+        }
+        function resetBack(e){
+            e.style.background="rgba(0,0,0,0.3)";
+            cpc = window.setInterval("changepic()", 1000);
+
+        }
+    </script>
+</head>
+<body>
+<div>
+    <img id="image1" src="images/20170111_pic1_750x315.jpg" alt="missing the picture" onmouseover="stopPic()" onmouseout="startPic()">
+    <ul>
+        <li id="id1" onmouseover="changeBack(this)" onmouseout="resetBack(this)">1</li>
+        <li id="id2" onmouseover="changeBack(this)" onmouseout="resetBack(this)">2</li>
+        <li id="id3" onmouseover="changeBack(this)" onmouseout="resetBack(this)">3</li>
+        <li id="id4" onmouseover="changeBack(this)" onmouseout="resetBack(this)">4</li>
+        <li id="id5" onmouseover="changeBack(this)" onmouseout="resetBack(this)">5</li>
+        <li id="id6" onmouseover="changeBack(this)" onmouseout="resetBack(this)">6</li>
+        <li id="id7" onmouseover="changeBack(this)" onmouseout="resetBack(this)">7</li>
+        <li id="id8" onmouseover="changeBack(this)" onmouseout="resetBack(this)">8</li>
+    </ul>
+</div>
+
+</body>
+</html>

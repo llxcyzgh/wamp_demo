@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-层级选择器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div,a,p{
+            border: 1px solid #000;
+            font-size:30px;
+        }
+    </style>
+    <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div>
+    <p>p标签
+        <a href="">p标签中的</a>
+    </p>
+    <a href="#">div中的a链接</a>
+</div>
+<div>
+    <ul>
+        <li id="li1">a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+    </ul>
+</div>
+<input type="button" value="点击">
+<script>
+    $("input").click(function () {
+//        $("div a").css({backgroundColor:"red"});
+//        $("div>a").css({backgroundColor:"grey"});
+//        $("div>ul>li").css({backgroundColor:"yellow"});
+//        $("#li1+").css({backgroundColor:"pink"});
+        $("#li1~").css({background:"blue"});
+
+    });
+</script>
+</body>
+</html>

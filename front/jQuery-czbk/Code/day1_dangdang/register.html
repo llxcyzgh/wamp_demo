@@ -1,0 +1,269 @@
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>当当网注册页面</title>
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<link href="css/layout.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="js/register.js" type="text/javascript"></script>
+<style>
+	.msg{color:gray;}
+	.msg2{color:#ff3333;background-color:#ffcc99;border:solid 1px gray;line-height:18px;padding: 5px 3px;}
+</style>
+<script>
+	//总检测的函数
+	function checkForm(){
+		//检测：如果昵称错误，不让提交，再如果地址错误，也不让提交。。。。。。
+		//checkEmail()==false||checknickName()==false,密码，密码确认==false
+		if(blurEmail()==false||blurNickName()==false||blurPwd()==false||blurRePwd()==false||checkSex()==false||checkProvince()==false){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	//emial地址框获得焦点的函数
+	function focusEmail(){
+		//获取email后面的span对象
+		var emailMsg = document.getElementById("emailMsg");
+		emailMsg.innerHTML="这个账号是用来接收邮件的请保管好";
+		emailMsg.className="msg";
+	}
+	//email地址框失去焦点的函数
+	function blurEmail(){
+		//先获取email里面的内容value值
+		var email = document.getElementById("email").value;
+		//获取email后面的span对象
+		var emailMsg = document.getElementById("emailMsg");
+		if(email==""){
+			emailMsg.innerHTML="地址不能为空";
+			emailMsg.className="msg2";
+			return false;
+		}else if(email.indexOf("@")==-1){
+			emailMsg.innerHTML="email地址格式错误";
+			emailMsg.className="msg2";
+			return false;
+		}else{
+			emailMsg.innerHTML="<img src='images/register_write_ok.gif'>";
+			return true;
+		}
+	}
+	//昵称获得焦点的函数
+	function focusNickName(){
+		//获取昵称后面的span对象
+		var nickMsg = document.getElementById("nickMsg");
+		nickMsg.innerHTML="请输入一个你喜欢的昵称";
+		nickMsg.className="msg";
+	}
+	//昵称失去焦点的函数
+	function blurNickName(){
+		//获取昵称的value值
+		var nickName = document.getElementById("nickName").value;
+		//获取昵称后面的span对象
+		var nickMsg = document.getElementById("nickMsg");
+		if(nickName==""){
+			nickMsg.innerHTML="昵称不能为空";
+			nickMsg.className="msg2";
+			return false;
+		}else if(nickName.length<6){
+			nickMsg.innerHTML="昵称长度错误";
+			nickMsg.className="msg2";
+			return false;
+		}else{
+			nickMsg.innerHTML="<img src='images/register_write_ok.gif'>";
+			return true;
+		}
+	}
+	//密码框获得焦点的函数
+	function focusPwd(){
+		var pwdMsg = document.getElementById("pwdMsg");
+		pwdMsg.innerHTML="请输入密码并且保管好";
+		pwdMsg.className="msg";
+	}
+	//密码框失去焦点的函数
+	function blurPwd(){
+		//密码框的value值
+		var pwd = document.getElementById("pwd").value;
+		//密码框后面的span对象
+		var pwdMsg = document.getElementById("pwdMsg");
+		if(pwd==""){
+			pwdMsg.innerHTML="密码不能为空";
+			pwdMsg.className="msg2";
+			return false;
+		}else if(pwd.length<6){
+			pwdMsg.innerHTML="密码长度不能少于六位";
+			pwdMsg.className="msg2";
+			return false;
+		}else{
+			pwdMsg.innerHTML="<img src='images/register_write_ok.gif'>";
+			return true;
+		}
+	}
+	//密码确认框获得焦点的函数
+	function focusRePwd(){
+		var repwdMsg = document.getElementById("repwdMsg");
+		repwdMsg.innerHTML="密码确认要和密码相同";
+		repwdMsg.className="msg";
+	}
+	//密码确认框失去焦点的函数
+	function blurRePwd(){
+		//获取密码确认的value值
+		var repwd = document.getElementById("repwd").value;
+		//获取密码框的value值
+		var pwd = document.getElementById("pwd").value;
+		//获取密码确认框后面的span对象
+		var repwdMsg = document.getElementById("repwdMsg");
+		if(repwd!=pwd){
+			repwdMsg.innerHTML="两次密码不同";
+			repwdMsg.className="msg2";
+			return false;
+		}else{
+			repwdMsg.innerHTML="<img src='images/register_write_ok.gif'>";
+			return true;
+		}
+	}
+	//检测性别的函数
+	function checkSex(){
+		var sex = document.getElementsByName("sex");
+		var sexMsg = document.getElementById("sexMsg");
+		if(sex[0].checked==true||sex[1].checked==true){
+			return true;
+		}else{
+			sexMsg.innerHTML="请选择性别";
+			sexMsg.className="msg2";
+			return false;
+		}
+	}
+	//点击性别的函数
+	function clickSex(){
+		//获取sex后面的span对象
+		var sexMsg = document.getElementById("sexMsg");
+		sexMsg.innerHTML="<img src='images/register_write_ok.gif'>";
+		sexMsg.className="msg";
+	}
+	//检测省份的函数
+	function checkProvince(){
+		//获取select的value值
+		var province  = document.getElementById("province").value;
+		//获取select后面的span对象
+		var proMsg = document.getElementById("proMsg");
+		if(province==""){
+			proMsg.innerHTML="请选择省份";
+			proMsg.className="msg2";
+			return false;
+		}else{
+			proMsg.innerHTML="<img src='images/register_write_ok.gif'>";
+			proMsg.className="msg";
+			return true;
+		}
+	}
+	//省份onchange事件的函数
+	function changeProvince(){
+		//获取select对象的value值
+		var province = document.getElementById("province").value;
+		//获取select后面的span对象
+		var proMsg = document.getElementById("proMsg");
+		if(province!=""){
+			proMsg.innerHTML="<img src='images/register_write_ok.gif'>";
+			proMsg.className="msg";
+		}
+	}
+</script>
+</head>
+
+<body>
+<div id="header">
+<div id="register_header">
+   <div class="register_header_left"><img src="images/logo.gif" alt="logo"></div>
+   <div class="register_header_right"><a href="index.html" class="blue">首页</a> | <a href="product.html" class="blue">商品展示页</a>  | <a href="shopping.html" class="blue">购物车</a> |  <a href="login.html" class="blue">登录</a></div>
+   </div>
+</div>
+<div id="main">
+  <div class="register_content">
+    <div class="register_top_bg"></div> 
+    <div class="register_mid_bg">
+      <ul>
+        <li class="register_mid_left">填写注册信息</li>
+        <li class="register_mid_mid">2. 邮箱验证</li>
+        <li class="register_mid_right">3. 完成注册</li>
+    </ul>
+    </div>
+    <div class="register_top_bg_mid">
+    <div class="register_top_bg_two_left"></div>
+    <div class="register_top_bg_two_right"></div>
+    <div class="register_title_bg"><img src="images/register_pic_02.gif" alt="欢迎注册"><br>您所提供的资料不会做其他用途，敬请安心填写。</div>
+    </div>
+    <div class="register_dotted_bg"></div>
+    <div class="register_message">
+    
+
+	
+	<!--登录表单开始-->
+	<form action="register.php" method="post" id="myform" onsubmit="return checkForm()">
+     <dl class="register_row">
+        <dt>Email地址：</dt>
+		<dd><input id="email" type="text" class="register_input" onfocus="focusEmail()" onblur="blurEmail()"/>
+			<span id="emailMsg" class="msg"></span>
+		</dd>
+      </dl>
+      <dl class="register_row">
+         <dt>设置昵称：</dt>
+         <dd>
+			<input id="nickName" type="text" class="register_input" onfocus="focusNickName()" onblur="blurNickName()"/>
+			<span id="nickMsg" class="msg"></span>
+		 </dd>
+         <dd></dd>
+      </dl>
+     <dl class="register_row">
+         <dt>设定密码：</dt>
+         <dd><input id="pwd" type="password" class="register_input" onfocus="focusPwd()" onblur="blurPwd()" />
+		 <span id="pwdMsg" class="msg"></span></dd>
+     </dl> 
+     <dl class="register_row"> 
+         <dt>再输入一次密码：</dt>
+         <dd><input id="repwd" type="password" class="register_input" onfocus="focusRePwd()" onblur="blurRePwd()">
+		 <span id="repwdMsg" class="msg"></span></dd>
+     </dl>
+     <dl class="register_row">
+        <dt>性别：</dt>
+        <dd><input name="sex" type="radio" value="男" onclick="clickSex()"> <label>男</label></dd>
+		<dd> <input name="sex" type="radio" value="女" onclick="clickSex()"> <label>女</label>
+			<span id="sexMsg" class="msg"></span></dd>
+		</dd>
+     </dl>
+     <dl class="register_row">
+        <dt>所在地区：</dt>
+        <dd><select id="province" name="province" onchange="changeProvince()">
+				<option value="" >请选择</option>
+				<option value="1" >北京</option>
+				<option value="2" >山东</option>
+				<option value="3" >河北</option>
+				<option value="4" >内蒙</option>
+				<option value="5" >上海</option>
+				<option value="99" >其他</option>
+		</select>
+		<span id="proMsg" class="msg"></span></dd>
+        <dd><select id="city"  style="width:130px;">
+            <option>请选择城市/地区</option>
+          </select></dd>
+      </dl>
+      <div class="registerBtn">
+	  	<input id="registerBtn" type="image" src="images/register_btn_out.gif">
+	</div>
+   </form>
+	<!--登录表单结束-->
+
+
+
+
+    </div>
+    
+    
+  </div>
+  </div>
+<!--网站版权部分开始-->
+<div id="footer">
+<iframe src="footer.html" height="50px" width="900px" frameborder="0"></iframe>
+</div>
+</body>
+</html>

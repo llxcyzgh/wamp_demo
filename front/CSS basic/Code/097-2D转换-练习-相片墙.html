@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>97-2D转换-练习-相片墙</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            height: 400px;
+            border: 1px solid #000;
+            background-color: skyblue;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        ul li {
+            list-style: none;
+            width: 150px;
+            height: 200px;
+            background-color: #f00;
+            display: inline-block;
+            margin-top: 100px;
+            position: relative;
+            transition: all 1s;
+            box-shadow: 0 0 10px;
+        }
+
+        ul li:nth-child(1) {
+            transform: rotate(30deg);
+        }
+
+        ul li:nth-child(2) {
+            transform: rotate(-40deg);
+        }
+
+        ul li:nth-child(3) {
+            transform: rotate(10deg);
+        }
+
+        ul li:nth-child(4) {
+            transform: rotate(45deg);
+        }
+
+        ul li img {
+            width: 150px;
+            height: 200px;
+            border: 3px solid #fff;
+            box-sizing: border-box;
+        }
+        ul li:hover{
+            /*transform: rotate(0deg);*/
+            /*transform: none;*/
+            transform: scale(1.5);
+            z-index: 1;
+
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="image/20170213_1.jpg" alt="photos"></li>
+    <li><img src="image/20170213_2.jpg" alt="photos"></li>
+    <li><img src="image/20170213_3.jpg" alt="photos"></li>
+    <li><img src="image/20170213_4.jpg" alt="photos"></li>
+</ul>
+</body>
+</html>

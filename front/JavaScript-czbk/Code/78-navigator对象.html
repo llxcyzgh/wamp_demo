@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>78-navigator对象</title>
+    <script>
+        function fuk(){
+            var n=navigator.appName;
+            alert(n);
+        }
+        function fuk2(){
+            var n=navigator.appCodeName;
+            alert(n);
+        }
+        function fuk3(){
+            var n=navigator.appVersion;
+            alert(n);
+        }
+        function fuk4(){
+            var n=navigator.userAgent;
+            alert(n);
+        }
+    </script>
+</head>
+<body>
+<button onclick="fuk()">点击获取浏览器名appName</button>
+<button onclick="fuk2()">点击获取浏览器代码名appCodeName</button>
+<button onclick="fuk3()">点击获取浏览器版本appVersion</button>
+<button onclick="fuk4()">点击获取浏览器版本userAgent</button>
+</body>
+</html>

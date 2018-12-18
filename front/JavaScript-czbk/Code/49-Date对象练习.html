@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>49-Date对象练习</title>
+    <script>
+        var nowdate=new Date();//创建现在的时间数据
+        var nowms=nowdate.getTime();//把时间转换成1970年至今的毫秒
+        var mydate=new Date("1991/03/12/ 0:0:1");//创建自己出生日期的时间数据
+        var myms=mydate.getTime();//把时间转换毫秒数
+        var minus=(nowms-myms)/1000/3600/24;
+        document.write(minus);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

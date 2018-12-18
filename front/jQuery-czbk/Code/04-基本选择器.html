@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-基本选择器</title>
+    <script src="js/jquery-3.1.1.js">
+
+    </script>
+</head>
+<body>
+<div id="div1" class="cla1">abcdegfg</div>
+<p>段落</p>
+<a href="#">链接</a>
+<input type="button" value="点击">
+<script>
+$("input").click(function(){
+//    $("#div1").css({background:"red"});
+//    $("div").css({background:"blue"});
+//    $(".cla1").css({background:"yellow"});
+    $("div,p,a").css({background:"pink"});
+});
+</script>
+</body>
+</html>

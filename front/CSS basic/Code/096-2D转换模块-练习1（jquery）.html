@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>96-2D转换模块-练习</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #divOuter{
+            width: 400px;
+            height: 500px;
+            border: 10px solid #000;
+            margin: 40px auto;
+
+        }
+
+        div div {
+            width: 310px;
+            height: 438px;
+            border: 2px solid #000;
+            background-color: deepskyblue;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function changePic() {
+            $("#divInner").css({"perspective": "200px"});
+            $("#pk").css({"transform-origin":"center bottom","transform": "rotateX(60deg)"});
+        }
+        function changePic2() {
+            $("#divInner").css({"perspective": ""});
+            $("#pk").css({"transform-origin":"","transform": ""});
+        }
+    </script>
+</head>
+<body>
+<div id="divOuter">
+    <div id="divInner">
+        <img id="pk" src="image/20170213_pk.png" alt="pukepai" onmouseover="changePic()" onmouseout="changePic2()"></div>
+</div>
+
+</body>
+</html>

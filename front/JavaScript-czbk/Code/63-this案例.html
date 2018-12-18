@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>63-this案例</title>
+    <script>
+        function fuk1(obj){
+            obj.value=parseFloat(obj.value)+1;
+        }
+        function fuk2(obj){
+            obj.target.value++;
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="1" onclick="fuk1(this)">
+<input type="button" value="2" onclick="fuk1(this)">
+<input type="button" value="3" onclick="fuk1(this)">
+<input type="button" value="4" onclick="fuk1(this)">
+<hr>
+<hr>
+<hr>
+<input type="button" value="1" onclick="fuk2(event)">
+<input type="button" value="2" onclick="fuk2(event)">
+<input type="button" value="3" onclick="fuk2(event)">
+<input type="button" value="4a" onclick="fuk2(event)">
+</body>
+</html>

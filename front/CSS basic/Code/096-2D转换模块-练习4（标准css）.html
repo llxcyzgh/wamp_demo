@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>96-2D转换模块-练习-javascript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 310px;
+            height: 438px;
+            background-color: #67e5ff;
+            margin: 0 auto;
+            border: 10px solid #000;
+            perspective: 200px;
+        }
+        div img{
+            transform-origin: center bottom;
+            transition: transform 2s;
+        }
+        div:hover img{
+            transform: rotateX(60deg);
+
+        }
+    </style>
+
+</head>
+<body>
+<div>
+    <img src="image/20170213_pk.png" alt="missing">
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-sacle=1,user-scalabe=no">
+    <title>10-表单/复选框+单选框+表单框组</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" style="background: #e6e6e6;">
+    <!--表单横向排版 .form-inline 不常用-->
+    <form class="form-horizontal">
+        <h3>文本框 .form-control</h3>
+        <div class="form-group">
+            <label for="cemail">邮箱</label>
+            <input type="email" name="cemail" id="cemail" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="pwd">密码</label>
+            <input type="password" name="pwd" id="pwd" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="number1">手机号</label>
+            <input type="number" class="form-control" name="number1" id="number1">
+        </div>
+
+        <h3 class="page-header">复选框 .checkbox-inline</h3>
+        <div class="form-group">
+            <span>爱好</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="checkbox-inline"><input type="checkbox">唱歌</label>
+            <label class="checkbox-inline"><input type="checkbox">跳舞</label>
+            <label class="checkbox-inline disabled"><input type="checkbox">写字</label>
+            <label class="checkbox-inline"><input type="checkbox" disabled>敲代码</label>
+        </div>
+
+        <h3 class="page-header">单选框 .radio-inline</h3>
+        <div class="form-group">
+            <!--type="checkbox", "radio"中value的意思- 定义与输入相关联的值，也就是通过value传值！你前面选了男，用value传过去就是男！选女传过去就是女！-->
+            <label class="radio-inline"><input type="radio" name="gender" value="male" checked="checked">男</label>
+            <label class="radio-inline"><input type="radio" name="gender" value="femal">女</label>
+            <label class="radio-inline disabled"><input type="radio" name="gender" value="renyao" disabled>保密</label>
+        </div>
+
+
+        <h3 class="page-header">输入框组</h3>
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">搜索</span>
+            <input type="search" name="sc" id="sc" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" name="seac" id="seac" class="form-control">
+            <span class="input-group-addon">查询内容</span>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-addon"><span class="glyphicon glyphicon-user">搜索</span></span>
+        <input type="text" name="username" class="form-control">
+    </div>
+
+        <br>
+
+        <span class="glyphicon glyphicon-search"></span>
+        <span class="glyphicon glyphicon-heart"></span>
+
+
+    </form>
+
+</div>
+</body>
+</html>

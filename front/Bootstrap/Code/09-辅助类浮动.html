@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-sacle=1,user-scalabe=no">
+    <title>09-辅助类浮动</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <style>
+        .top{
+            width: 500px;
+            border: 1px solid #00f;
+            margin: 10px auto;
+            /*overflow: hidden;*/
+        }
+        .pull-left{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .pull-right{
+            width: 200px;
+            height: 200px;
+            background: #00f;
+        }
+
+    </style>
+</head>
+<body>
+<h3>左浮动.pull-left/ 右浮动.pull-right/ 清除浮动.clearfix</h3>
+<div class="container" style="background: #5e5e5e;">
+<div class="top clearfix">
+    <div class="pull-left">我在左边</div>
+    <div class="pull-right">我在右边</div>
+    <!--<div class="">我在左边</div>-->
+    <!--<div class="">我在右边</div>-->
+</div>
+</div>
+</body>
+</html>

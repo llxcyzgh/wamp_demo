@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>74-location案例</title>
+    <script>
+        window.onload=init();
+        function init(){
+            window.setInterval("daojishi()",1000);
+            window.setTimeout("tiaozhuan()",5000);
+        }
+        function tiaozhuan(){
+            location.replace("http://www.baidu.com");
+        }
+//        var i=5;
+        function daojishi(){
+            var obj=document.getElementById("span_second");
+            var i=obj.innerHTML;
+            obj.innerHTML=--i;
+        }
+    </script>
+</head>
+<body>
+账号注册成功，页面将会在<span id="span_second">10</span>s后自动跳转到首页
+</body>
+</html>

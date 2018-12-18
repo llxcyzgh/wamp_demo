@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #f000df;
+            border: 1px solid #000;
+        }
+
+        p{
+            border: 1px solid #2005ff;
+        }
+    </style>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".btn1").click(function () {
+                // $('.div1').append('append');
+                $("<span>append</span>").appendTo(".div1"); // 生效
+                // $("append").appendTo(".div1"); // 不生效
+            });
+        });
+    </script>
+</head>
+<body>
+<button class="btn1">btn1-内部插入append,appendTo,prepend,prependTo</button>
+<button class="btn2">btn2-外部插入before,after,insertBefore,insertAfter</button>
+<button class="btn3">btn3-</button>
+<button class="btn4">btn4-</button>
+<button class="btn5">btn5-</button>
+<br><br>
+<div class="div1">
+    THIS IS A DIV
+<p class="p1">this is a paragraph</p>
+</div>
+<p class="p2">this is paragraph2</p>
+<div class="div2">this is div2</div>
+</body>
+</html>

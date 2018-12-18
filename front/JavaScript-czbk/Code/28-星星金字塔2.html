@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>28-星星金字塔2</title>
+    <script>
+        /*
+         第一行：    *
+         第二行：   ***
+         第三行：  *****
+         第四行： *******
+         第五行：*********
+         */
+        document.write("<table>");
+        for(var i=1;i<=5;i++){
+            document.write("<tr>");
+            for(var j=2*i-1;j>0;j--){
+                document.write("<td colspan='10' align='center'>");
+                document.write("*");
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>")
+    </script>
+</head>
+<body>
+
+</body>
+</html>

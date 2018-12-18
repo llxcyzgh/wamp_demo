@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>111-3D播放器(自定)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #fff url("image/20170218_ibib/bg.jpg") 0 0 no-repeat;
+            -webkit-background-size:cover;
+            background-size:cover;
+            overflow: hidden;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            /*background-color: palegreen;*/
+            position: absolute;
+            bottom: 100px;
+            left:80%;
+            margin-left:-100px;
+            transform-style: preserve-3d;
+            animation: sport 6s linear 0s infinite normal;
+
+        }
+        ul li{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            font-size:100px;
+            line-height: 200px;
+            border: 5px solid rgba(0, 235, 255, 0.8);
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        ul li img{
+            width: 200px;
+            height: 200px;
+        }
+        ul li:nth-child(1){
+            background-color: #000;
+            transform: rotateY(60deg) translateZ(200px);
+        }
+        ul li:nth-child(2){
+            background-color: #000;
+            transform: rotateY(120deg) translateZ(200px);
+
+        }
+        ul li:nth-child(3){
+            background-color: #000;
+            transform: rotateY(180deg) translateZ(200px);
+
+        }
+        ul li:nth-child(4){
+            background-color: #000;
+            transform: rotateY(240deg) translateZ(200px);
+
+        }
+        ul li:nth-child(5){
+            background-color: #000;
+            transform: rotateY(300deg) translateZ(200px);
+
+        }
+        ul li:nth-child(6){
+            background-color: #000;
+            transform: rotateY(360deg) translateZ(200px);
+
+        }
+        ul:hover{
+            animation-play-state: paused;
+        }
+        ul:hover li img{
+            opacity: 0.3;
+        }
+        ul li:hover img{
+            opacity: 1;
+        }
+        .heart{
+            width: 173px;
+            height: 157px;
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            animation: move 10s linear 0s infinite normal;
+        }
+        @keyframes sport {
+            from{
+                /*
+                注意点：
+                1、动画如果有和默认样式中同名的属性，会覆盖默认样式的属性
+                2、在编写动画的时候，固定不变的值写在前面，需要变化有值写在后面
+                */
+                transform: rotateX(-10deg) rotateY(0deg) ;
+            }
+            to{
+                transform: rotateX(-10deg) rotateY(360deg);
+            }
+        }
+        @keyframes move {
+            0%{
+                left: 100px;
+                bottom: 100px;
+                opacity: 1;
+        }
+            20%{
+                left: 300px;
+                bottom: 300px;
+                opacity: 0;
+
+            }
+            40%{
+                left: 500px;
+                bottom: 500px;
+                opacity: 1;
+            }
+            60%{
+                left: 800px;
+                bottom: 300px;
+                opacity: 0;
+            }
+            80%{
+                left: 1000px;
+                bottom: 100px;
+                opacity: 1;
+            }
+            100%{
+                left: 800px;
+                bottom: -200px;
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="image/20170218_ibib/1.jpg" alt=""></li>
+    <li><img src="image/20170218_ibib/2.jpg" alt=""></li>
+    <li><img src="image/20170218_ibib/3.jpg" alt=""></li>
+    <li><img src="image/20170218_ibib/4.jpg" alt=""></li>
+    <li><img src="image/20170218_ibib/5.jpg" alt=""></li>
+    <li><img src="image/20170218_ibib/6.jpg" alt=""></li>
+</ul>
+<img src="image/20170218_jacky/xin.png" alt="missing" class="heart">
+<audio src="image/20170218_ibib/周二珂-告白气球.mp3" autoplay="autoplay" loop="loop" controls="controls"></audio>
+</body>
+</html>

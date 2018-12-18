@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>80-DOM节点</title>
+    <script>
+        function fuk() {
+            var obj = document.getElementById("div1");
+         //   obj.parentNode.style.background = "red";
+         //   obj.previousSibling.previousSibling.style.background="blue";
+//            obj.parentNode.nextSibling.nextSibling.nextSibling.nextSibling.style.background="yellow";
+//            obj.parentNode.firstChild.nextSibling.style.background="skyblue";
+            obj.parentNode.childNodes[1].style.background="pink";
+        }
+    </script>
+</head>
+<body>
+<div>
+    <p>段落</p>
+    <div id="div1">这是div1的内容</div>
+    <a href="#">链接</a>
+</div>
+<a href="#">aaa</a>
+<div>abcdefg</div>
+<input type="button" value="点击" onclick="fuk()">
+</body>
+</html>

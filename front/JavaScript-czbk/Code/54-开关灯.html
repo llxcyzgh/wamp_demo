@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>54-开关灯</title>
+    <style>
+     /*   img{
+            width: 500px;
+            height: 500px;
+        }*/
+    </style>
+    <script>
+        function fuk1() {
+            var obj1 = document.getElementById("img1");
+            obj1.src = "images/20170109bulbon.gif";
+        }
+        function fuk2(){
+            var obj2=document.getElementById("img1");
+            obj2.src="images/20170109bulboff.gif";
+//            obj2.style.width="500px";
+        }
+    </script>
+</head>
+<body>
+<img src="images/20170109bulboff.gif" id="img1" onmouseover="fuk1()" onmouseout="fuk2()">
+</body>
+</html>

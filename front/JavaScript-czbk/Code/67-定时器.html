@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>67-定时器</title>
+    <script>
+//        window.setTimeout("alert(123)",3000);
+//        window.setInterval("alert(789)",3000);
+        var abcd=window.setInterval("fuk()",3000);
+        function fuk(){
+            alert(456);
+
+        }
+        function fuk2() {
+             window.clearTimeout(abcd);
+        }
+        function fuk3() {
+            window.clearInterval(abcd);
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="点击清除定时器" onclick="fuk2()">
+<input type="button" value="点击反复性定时器" onclick="fuk3()">
+</body>
+</html>

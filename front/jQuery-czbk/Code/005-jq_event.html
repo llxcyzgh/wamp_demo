@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+    }
+    </style>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $(".btn1").click(function() {
+            $("div").eq(0).css("backgroundColor", "#f00"); // 设置单个css
+        });
+
+        $("div").eq(0).on('mouseover', function() {
+            $("div").eq(0).css("backgroundColor", "#000"); // 设置单个css
+        });
+
+        // $("div").eq(0).on('mouseleave', function() {
+        //     $("div").eq(0).css("backgroundColor", ""); // 设置单个css
+        // });
+
+        // 获取事件坐标有三种方式
+        // event.offsetX, event.offsetY 相对于事件元素左上角
+        // event.pageX, event.pageY 相对于页面的左上角
+        // event.clientX, event.clientY 相对于视口的左上角
+        $("div").eq(0).click(function(event) {
+            console.log(event.offsetX, event.offsetY);
+            console.log(event.clientX, event.clientY);
+            console.log(event.pageX, event.pageY);
+        });
+
+
+
+
+    });
+    </script>
+</head>
+
+<body>
+    <button class="btn1">btn1</button>
+    <button class="btn2">btn2</button>
+    <button class="btn3">btn3</button>
+    <button class="btn4">btn4</button>
+    <button class="btn5">btn5</button>
+    <p style="height: 2000px"></p>
+    <div>div</div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>68-定时器案例</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            border: 10px solid #00f;
+            background: #ff0;
+            width: 700px;
+            height: 200px;
+            text-align: center;
+            font-size:50px;
+        }
+    </style>
+    <script>
+        window.onload=init;
+        function init(){
+            fn();
+            window.setInterval("fn()",1000);
+        }
+        function fn(){
+            var n=new Date();
+            var obj=document.getElementById("di1");
+            obj.innerHTML= n.toLocaleString();
+        }
+    </script>
+</head>
+<body>
+<div id="di1">
+    时间
+</div>
+</body>
+</html>

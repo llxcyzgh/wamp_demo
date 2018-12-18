@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>59-移动瞄准案例</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            box-sizing: border-box;
+            width: 500px;
+            height: 500px;
+            background-color: #f00;
+            cursor:crosshair;
+
+        }
+    </style>
+    <script>
+        function fuk(e){
+     /*       var obj=document.getElementById("di1");
+            obj.innerHTML="坐标（"+e.clientX+","+e.clientY+"）";
+*/
+            e.target.innerHTML="坐标（"+e.clientX+","+e.clientY+"）";
+        }
+    </script>
+</head>
+<body>
+<div id="di1" onmousemove="fuk(event)">
+坐标（0，0）
+</div>
+</body>
+</html>

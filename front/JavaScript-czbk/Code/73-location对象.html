@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>73-location对象</title>
+    <script>
+        function fuk(){
+/*            var n=location.href;
+            alert(n);*/
+//            location.href="http://www.baidu.com";
+//            location.assign("http://www.ifeng.com");
+//            location.reload();
+            location.replace("http://www.baidu.com");
+        }
+    </script>
+</head>
+<body>
+<button onclick="fuk()">点击获取 location.href</button>
+<button onclick="fuk()">点击跳转页面 location.href</button>
+<button onclick="fuk()">点击跳转 location.assign()</button>
+<button onclick="fuk()">点击重新加载、刷新 location.reload()</button>
+<button onclick="fuk()">点击替换 location.replace()</button>
+</body>
+</html>

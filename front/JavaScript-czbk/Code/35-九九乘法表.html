@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>35-九九乘法表</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid #000;
+            padding:10px;
+            /*text-align: center;*/
+        }
+    </style>
+    <script>
+        function copyx(m,n){//n代表打印的份数，m代表打印几几乘法表
+            for(var k=1;k<=m;k++){
+                document.write("<table>");
+                for(var i=1;i<=n;i++){//表示行数的循环
+                    document.write("<tr>");
+                    for (var j=1;j<=i;j++){//表示列数的循环
+                        document.write("<td>");
+                        document.write(j+"x"+i+"="+j*i);
+                        document.write("</td>");
+                    }
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+            }
+        }
+        copyx(1,20);
+        copyx(2,5);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>48-时间日期对象</title>
+    <script>
+       /* var n1=new Date();
+        var n2=new Date("1999/9/9 6:6:6");
+        var n3=new Date(1999,9,9,6,6,6);
+        var n4=new Date(3256325456122);
+        document.write(n1.toLocaleString()+"<br>");
+        document.write(n2.toLocaleString()+"<br>");
+        document.write(n3.toLocaleString()+"<br>");
+        document.write(n4.toLocaleString()+"<br>");*/
+        var n=new Date();
+        var year= n.getFullYear(); //获取n里面年份
+        var month= n.getMonth(); //获取n里面月份
+        var date= n.getDate(); //获取n里面日期
+        var day= n.getDay(); //获取n里面星期
+        var time= n.getTime(); //获取n里面从1970年1月1日至今的毫秒值
+        document.write(n.toLocaleString()+"<br>");
+        document.write(year+"<br>");
+        document.write(month+"<br>");
+        document.write(date+"<br>");
+        document.write(day+"<br>");
+        document.write(time+"<br>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

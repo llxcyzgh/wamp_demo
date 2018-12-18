@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>69-图片切换案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: gray;
+        }
+        div{
+            box-sizing: border-box;
+            width: 750px;
+            height: 315px;
+            margin: 20px auto;
+            /*border: 1px solid #000;*/
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        div ul{
+            list-style: none;
+            position: absolute;
+            left: 500px;
+            top: 280px;
+        }
+        div ul li{
+            float: left;
+            font-size:20px;
+            font-weight:bold;
+            width: 25px;
+            height: 25px;
+            margin-left: 2px;
+            background: rgba(0,0,0,0.3);
+            text-align: center;
+            line-height: 25px;
+        }
+    </style>
+    <script>
+        window.onload = init;
+        var interval_cp,obj_img,obj_li,i=0;
+        //初始时间间隔函数
+        function init() {
+            obj_li=document.getElementById("li1");
+            obj_li.style.background = "red";
+            interval_cp = window.setInterval("changepic()", 1000);
+        }
+        //自动更换图片
+        function changepic() {
+            i++;
+            obj_img = document.getElementById("image0");
+            if (i == 9) {
+                i=1;
+            }
+            obj_img.src = "images/20170111_pic" + i + "_750x315.jpg";
+            for(var j=1;j<=8;j++){
+                obj_li = document.getElementById("li"+j);
+                obj_li.style.background = "rgba(0,0,0,0.3)";
+            }
+            obj_li = document.getElementById("li"+i);
+            obj_li.style.background = "red";
+        }
+        //停止自动时间间隔更换图片
+        function stopPic(){
+            window.clearInterval(interval_cp);
+        }
+        //开始自动更换图片
+        function startPic() {
+            interval_cp = window.setInterval("changepic()", 1000);
+        }
+        //更换列表标签背景
+        function changeBack(e){
+            for(var j=1;j<=8;j++){
+                obj_li = document.getElementById("li"+j);
+                obj_li.style.background = "rgba(0,0,0,0.3)";
+            }
+            i= e.innerHTML;
+            obj_img.src="images/20170111_pic" + i + "_750x315.jpg";
+            e.style.background="red";
+            window.clearInterval(interval_cp);
+
+        }
+        //恢复列表标签背景
+        function resetBack(e){
+            e.style.background="rgba(0,0,0,0.3)";
+            interval_cp = window.setInterval("changepic()", 1000);
+        }
+    </script>
+</head>
+<body>
+<div>
+    <img id="image0" src="images/20170111_pic1_750x315.jpg" alt="missing the picture" onmouseover="stopPic()" onmouseout="startPic()">
+    <ul>
+        <li id="li1" onmouseover="changeBack(this)" onmouseout="resetBack(this)">1</li>
+        <li id="li2" onmouseover="changeBack(this)" onmouseout="resetBack(this)">2</li>
+        <li id="li3" onmouseover="changeBack(this)" onmouseout="resetBack(this)">3</li>
+        <li id="li4" onmouseover="changeBack(this)" onmouseout="resetBack(this)">4</li>
+        <li id="li5" onmouseover="changeBack(this)" onmouseout="resetBack(this)">5</li>
+        <li id="li6" onmouseover="changeBack(this)" onmouseout="resetBack(this)">6</li>
+        <li id="li7" onmouseover="changeBack(this)" onmouseout="resetBack(this)">7</li>
+        <li id="li8" onmouseover="changeBack(this)" onmouseout="resetBack(this)">8</li>
+    </ul>
+</div>
+
+</body>
+</html>

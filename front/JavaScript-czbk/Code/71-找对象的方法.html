@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>66-找对象的方法</title>
+    <script>
+        function fuk(){
+            var obj=document.getElementsByTagName("div");
+            /*
+            obj=[
+                div1对象
+                div2对象
+                div3对象
+            ];
+             */
+//            alert(obj);
+            var len=obj.length;
+//            alert(len);
+            for(var i=0;i<=len;i++){
+                obj[i].style.background="red";
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div2</div>
+<div>div2</div>
+
+<input type="button" value="点击" onclick="fuk()">
+<button onclick="fuk()">点击</button>
+</body>
+</html>

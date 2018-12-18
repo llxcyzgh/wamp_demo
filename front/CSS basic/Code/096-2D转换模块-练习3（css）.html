@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>96-2D转换模块-练习-javascript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #divOuter{
+            width: 400px;
+            height: 500px;
+            border: 10px solid #000;
+            margin: 40px auto;
+
+        }
+
+        div>div {
+            width: 310px;
+            height: 438px;
+            border: 2px solid #000;
+            background-color: deepskyblue;
+            margin: 0 auto;
+            perspective: 200px;
+        }
+        img{
+        }
+        img:hover{
+            transform-origin: left bottom;
+            transform: rotateX(60deg);
+
+        }
+    </style>
+
+</head>
+<body>
+<div id="divOuter">
+    <div id="divInner">
+        <img id="pk" src="image/20170213_pk.png" alt="pukepai"></div>
+</div>
+
+</body>
+</html>

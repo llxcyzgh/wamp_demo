@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>62-按钮练习</title>
+    <script>
+        //1.用geiElemById方法
+        function fuk() {
+            var obj = document.getElementById("but1");
+            var val1 = obj.value;
+            //1.1用的switch
+            /*           switch (val1=="开") {
+             case true:
+             obj.value = "关";
+             break;
+             case false:
+             obj.value = "开";
+             }
+             */
+            //1.2用的if else
+            if (val1 == "关") {
+                obj.value = "开";
+            } else if (val1 == "开") {
+                obj.value = "关";
+            }
+        }
+
+        //2.用event方法
+        function fuk2(e){
+            var val2=e.target.value;
+            if (val2 == "关") {
+                e.target.value = "开";
+            } else if (val2 == "开") {
+                e.target.value = "关";
+            }
+        }
+
+        //3.用计数的方法
+        //3.1
+        var s=0;
+        function fuk3(e){
+            var count=1;
+            s=s+count;
+            count++;
+            if(s%2==0){
+                e.target.value="开";
+            }else{
+                e.target.value="关";
+            }
+        }
+
+        //3.2
+        var count=1;
+        function fuk4(e){
+            if(count%2==0){
+                e.target.value="开";
+            }else{
+                e.target.value="关";
+            }
+            alert(count);
+            count++;
+        }
+
+        //4.this
+        function fuk4(obj){
+            if(obj.value=="开"){
+                obj.value="关";
+            }else{
+                obj.value="开";
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="but1" value="开" onclick="fuk()">
+<input type="button" id="but2" value="开" onclick="fuk2(event)">
+<input type="button" id="but3" value="开" onclick="fuk3(event)">
+<input type="button" id="but4" value="开" onclick="fuk4(event)">
+<input type="button" id="but5" value="开" onclick="fuk4(this)">
+</body>
+</html>

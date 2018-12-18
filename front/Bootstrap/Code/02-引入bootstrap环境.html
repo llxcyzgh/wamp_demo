@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-引入bootstrap环境</title>
+    <!--屏幕和设备的屏幕一致，初始绽放为1:1，禁止用户缩放-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!--引入外部的bootstrap中的css文件-->
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <!--是Qurey文件. 务必在bootstrap.min.js之前引入-->
+    <script src="dist/js/jquery.min.js"></script>
+    <!--再引入bootstrap.min.js文件-->
+    <script src="dist/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: grey;">
+<div style="background-color: #fff;" class="container">
+    大家好
+</div>
+<br>
+<div style="background-color: #fff;" class="container-fluid">
+    大家好
+</div>
+<br>
+<div style="background-color: #fff;">
+    <h1 class="page-header " style="text-align: right;" >h1标题，36号字</h1>
+    <h3 class="page-header text-center" >h3标题24号字<small>small</small></h3>
+    <h3 class="page-header">加粗strong、倾斜em、删除del、下划线ins</h3>
+    <br>
+    <strong> 推荐使用的加粗strong</strong>
+    <em>推荐使用的倾斜em</em>
+    <del>推荐使用的删除del</del>
+    <ins>定义插入的文字（下划线）ins</ins>
+    <hr>
+    <span style="font-weight:bold">加粗可以用css中的font-weight:bold</span>
+    <span style="font-style: italic;">倾斜可以用css中的font-style:italic</span>
+    <span style="text-decoration: line-through;">删除线可以用css中的text-decoration:line-through</span>
+    <span style="text-decoration: overline;">上划线可以用css中的text-decoration:overline</span>
+    <span style="text-decoration:underline;">下划线可以用css中的text-decoration:underline</span>
+    <hr>
+    <h3 class="page-header">文本对齐<small>text-left\text-center\text-right</small>、文本英文大小写<small>text-uppercase\text-lowercase\text-captitalize-</small></h3>
+    <p class="text-right">加粗可以用css中的font-weight:bold 倾斜可以用CSS中的font-style:italic 删除线可以用Css中的text-decoration:line-through 上划线可以用css中的text-decoration:overline 下划线可以用css中的text-decoration:underline</p>
+    <p class="text-uppercase">加粗可以用css中的font-weight:bold 倾斜可以用CSS中的font-style:italic 删除线可以用Css中的text-decoration:line-through 上划线可以用css中的text-decoration:overline 下划线可以用css中的text-decoration:underline</p>
+    <p class="text-lowercase">加粗可以用css中的font-weight:bold 倾斜可以用CSS中的font-style:italic 删除线可以用Css中的text-decoration:line-through 上划线可以用css中的text-decoration:overline 下划线可以用css中的text-decoration:underline</p>
+    <p class="text-capitalize">加粗可以用css中的font-weight:bold 倾斜可以用CSS中的font-style:italic 删除线可以用Css中的text-decoration:line-through 上划线可以用css中的text-decoration:overline 下划线可以用css中的text-decoration:underline</p>
+    <hr>
+    <h3 class="page-header">列表<small>去原格式.list-unstyled、变横向排列.list-inline</small></h3>
+    <ul class="list-unstyled list-inline"><!--style="list-style: none" -->
+        <li>html</li>
+        <li>css</li>
+        <li>php</li>
+        <li>mysql</li>
+    </ul>
+    <h3 class="page-header">自定义列表<small>变横向排列.dl-horizontal</small></h3>
+    <dl class="dl-horizontal">
+        <dt>标题</dt>
+        <dd>标题解释</dd>
+    </dl>
+    <h3 class="page-header">表格 基类本.table\边框.table-bordered\鼠标悬停高亮.table-hover\隔行换色.table-striped\变紧凑.table-condensed\颜色.active、.success、.info、.danger、.warning</h3>
+    <div class="table-responsive">
+        <!--.table-responsive，给table的父元素加，窄分辨率中表格会出现水平滚动条-->
+      <table class="table table-bordered table-hover table-striped table-condensed">
+        <tr class="active">
+            <td>编号</td>
+            <td>产品的名称</td>
+            <td>状态</td>
+        </tr>
+        <tr class="success">
+            <td>0001</td>
+            <td>奥迪</td>
+            <td>未发货</td>
+        </tr>
+        <tr class="info">
+            <td>0002</td>
+            <td>奥拓</td>
+            <td>已发货</td>
+        </tr>
+        <tr class="danger">
+            <td>0003</td>
+            <td>爱玛</td>
+            <td>已退货</td>
+        </tr>
+        <tr class="warning">
+            <td>0004</td>
+            <td>绿箭</td>
+            <td>未接收</td>
+        </tr>
+      </table>
+    </div>
+</div>
+</body>
+</html>

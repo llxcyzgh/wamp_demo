@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+    }
+    </style>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("p").eq(0).click(function(event) {
+            $(this).css("backgroundColor", "#00f");
+            // 在子元素中停止事件冒泡,不会触发父元素的click事件
+            event.stopPropagation();
+        });
+
+        $("div").eq(0).click(function() {
+            $(this).css("backgroundColor", "#000");
+        });
+
+        // 移入移出事件
+        // mouseenter和mouseleave 移动到子元素不会触发事件
+        // mouseover和mouseout 移动到子元素会触发事件
+        // hover 内容监听移入和移出 内部实现就是调用mouseenter和mouseleave
+
+
+
+    });
+    </script>
+</head>
+
+<body>
+    <button class="btn1">btn1</button>
+    <button class="btn2">btn2</button>
+    <button class="btn3">btn3</button>
+    <button class="btn4">btn4</button>
+    <button class="btn5">btn5</button>
+    <div>
+        div
+        <p style="border: 1px solid #f00;">2125</p>
+    </div>
+</body>
+
+</html>

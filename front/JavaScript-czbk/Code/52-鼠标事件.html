@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>52-鼠标事件</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: #f00;
+        }
+    </style>
+    <script>
+        function fuk(){
+            var obj=document.getElementById("d1");
+            obj.style.backgroundColor="blue";
+            obj.style.color="yellow";
+        }
+    </script>
+</head>
+<body>
+<div id="d1" onmouseover="fuk()">
+    这是一个div
+</div>
+</body>
+</html>

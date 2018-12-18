@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-a标签的基本使用</title>
+</head>
+<body>
+<!--a标签的作用：控制页面与页面之间的跳转；
+    a标签的格式：<a href="">中间可以是文字也可是图片<a/>
+    target属性：（两个值 _self 和 _blank ）控制是在当前页面打开，还是新建一个页面打开；默认是当前页面
+    title属性：同image标签一样，这里的title属性也是控制鼠标悬停时显示的内容
+-->
+<p>点我去好123网址导航</p>
+<p></p>
+<p><a href="https://www.hao123.com/">点我去好123网址导航</a></p>
+<p><img src="image/ZJW.jpg" alt=""></p>
+<p><a href="https://www.hao123.com/"><img src="image/ZJW.jpg" alt=""></a></p>
+
+<!--以下是用的绝对路径-->
+<p><a href="E:/HTML basic/Code/09-路径问题.html">点我去本地网址之绝对路径</a></p>
+<p><a href="F:/0kinds of test/HTML basic/Code/09-路径问题.html">点我去本地网址之绝对路径</a></p>
+
+<!--以下是用的相对路径-->
+<p><a href="09-路径问题.html">点我去本地网址之相对路径</a></p>
+
+<!--以下是当前页面打开-->
+<a href="http://study.163.com/" target="_self">target="_self"以下是当前页面打开</a>
+
+<!--以下是新建一个页面打开-->
+<a href="http://study.163.com/" target="_blank">target="_blank"以下是新建一个页面打开</a>
+
+<p><a href="http://study.163.com/" target="_blank" title="友情提示，将会转到网易云课堂网页">title属性：鼠标悬停时有内容提示</a></p>
+
+</body>
+</html>

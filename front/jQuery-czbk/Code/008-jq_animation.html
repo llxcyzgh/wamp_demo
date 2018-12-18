@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #f000df;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            // show(显示) hide(隐藏) toggle
+            $("button").eq(0).click(function () {
+                // $("div").eq(0).hide(1000);
+                // $("div").eq(0).show(1000);
+                $("div").eq(0).toggle(1000);
+            });
+
+            // slideDown(滑出) slideUp(滑入收起) slideToggle
+            $("button").eq(1).click(function () {
+                console.log(1);
+                // $("div").eq(0).slideDown(1000,function () {
+                //     alert('ok');
+                // });
+                // $("div").eq(0).slideUp(1000);
+                $("div").eq(0).slideToggle(1000);
+            });
+
+            // fadeIn(淡入) fadeOut(淡出) fadeToggle fadeTo(淡入指定透明度,取值0-1)
+            $("button").eq(2).click(function () {
+                // $("div").eq(0).fadeIn(1000);
+                // $("div").eq(0).fadeOut(1000);
+                // $("div").eq(0).fadeToggle(1000);
+                $("div").eq(0).fadeTo(1000, 0.5);
+            });
+
+            // 自定义动画 animate
+            $("button").eq(3).click(function () {
+                $("div").eq(0).animate(
+                    {
+                        width:'500px',
+                        height:'500px',
+                        backgroundColor:"blue"
+                        // jquery animate函数不能处理背景色渐变，需要使用jquery.color插件; 可以使用 css3 方式实现
+                    }, 1000
+                );
+
+
+                // $("div").eq(0).css('backgroundColor','yellow')
+
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+<button>btn1-hide-show</button>
+<button>btn2-slideDown-slideUp</button>
+<button>btn3-fadeIn-fadeOut</button>
+<button>btn4-animate</button>
+<div>
+</div>
+<p>abc</p>
+</body>
+</html>

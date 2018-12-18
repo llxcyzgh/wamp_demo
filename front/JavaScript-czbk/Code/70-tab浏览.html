@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>65-tab浏览</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #d1{
+            /*box-sizing: border-box;*/
+            border: 1px solid #f00;
+            width: 500px;
+            height: 300px;
+        }
+        ul{
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        ul li{
+            /*box-sizing: border-box;*/
+            width: 98px;
+            height: 50px;
+            list-style: none;
+            float: left;
+            text-align: center;
+            line-height:50px;
+            border: 1px solid #0f0;
+        }
+        ul li:nth-of-type(2){
+            font-weight:bold;
+            border-bottom: none;
+        }
+        #div1,#div2,#div3,#div4{
+            display: none;
+        }
+        #div2{
+            display: block;
+        }
+    </style>
+    <script>
+        function showDiv(t){
+            //清空全部的tab格式和内容显示
+            for(i=1;i<=4;i++){
+                var li_i = document.getElementById("li"+i);
+                li_i.style.fontWeight="normal";
+                li_i.style.border="1px solid #0f0";
+                var div_i = document.getElementById("div"+i);
+                div_i.style.display = "none";
+            }
+            li_i = document.getElementById("li"+t);
+            li_i.style.fontWeight="bold";
+            li_i.style.borderBottom="none";
+            div_i = document.getElementById("div"+t);
+            div_i.style.display = "block";
+            document.getEle
+
+        }
+    </script>
+</head>
+<body>
+<div id="d1">
+    <ul>
+        <li id="li1" onmouseover="showDiv(1)">国际新闻</li>
+        <li id="li2" onmouseover="showDiv(2)">国内新闻</li>
+        <li id="li3" onmouseover="showDiv(3)">体育新闻</li>
+        <li id="li4" onmouseover="showDiv(4)">娱乐新闻</li>
+        <li> </li>
+    </ul>
+    <div id="div1">
+        <h3>国际新闻</h3>
+        <p>墨西哥总统喊话特朗普：绝不会为美墨边境墙买单</p>
+        <p>美媒BuzzFeed被特朗普斥为垃圾 赌气开卖垃圾桶</p>
+    </div>
+    <div id="div2">
+        <h3>国内新闻</h3>
+        <p>中医药大学发中药汤剂防雾霾?校方回应</p>
+        <p>"大师"王林患重病 法院对其中止审理</p>
+    </div>
+    <div id="div3">
+        <h3>体育新闻</h3>
+        <p>亚冠冠军+恒大死敌恐被取消资格 苏宁将受益</p>
+        <p>唐斯23+18哈登砍33分 森林狼终结火箭9连胜</p>
+    </div>
+    <div id="div4">
+        <h3>娱乐新闻</h3>
+        <p>陈思诚“出轨门”引发连锁效应，杨幂白百何都被拉下水</p>
+        <p>赵薇30亿元控股万家文化，为何自己只掏6000万？</p>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

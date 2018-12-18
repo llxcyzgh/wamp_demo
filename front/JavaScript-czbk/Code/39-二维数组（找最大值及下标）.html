@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>39-二维数组（找最大值及下标）</title>
+    <script>
+        var arr=[
+                [24,26,28,29,50,40],
+                [50,23,25,50,28,22,25],
+                [24,26,27,50,28]
+        ];
+        var maxx=arr[0][0];
+//        定义行的个数
+        var length1=arr.length;
+        for(var i=0;i<=length1-1;i++){
+//            定义第i行的列数
+            var length2=arr[i].length;
+            for(var j=0;j<=length2-1;j++){
+                if(maxx<=arr[i][j]){
+                    maxx=arr[i][j];
+//                    记下每一个maxx的i和j下标
+                    var hanghao=i;
+                    var liehao=j;
+                }
+            }
+        }
+        document.write("最大值为"+maxx+"<br>"+"下标为"+hanghao+"，"+liehao+"<hr>");
+
+//     判断是否有多个重复的最大值，并记下下标
+        for(i=0;i<=length1;i++){
+            length2=arr[i].length;
+            for(j=0;j<=length2;j++){
+                if(maxx==arr[i][j]){
+                    document.write("另外重复的最大值的下标为"+i+","+j+"<br>");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

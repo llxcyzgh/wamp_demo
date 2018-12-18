@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>29-表单标签2</title>
+</head>
+<body>
+<form action="http://www.520.it.com">
+    <!--
+    定义普通按钮
+    可以通过value属性来给按钮指定标题
+    作用：配合JS完成一些操作
+    -->
+    <input type="button" value="我是按钮">.
+
+    <!--图片按钮
+    作用：配合JS完成一些操作
+    -->
+    <input type="image" src="image/table3/photo_1.jpg"> <br><br><br>
+
+    <!--重置按钮
+    作用：用于清空表单中已经填写好的数据
+    注意点：
+    如果想修改重置按钮默认的按钮标题，可以通过value属性来修改
+    -->
+    账号 <input type="text" name="username"> <br><br>
+    密码 <input type="password" name="passw"><br><br>
+    <input type="reset" value="清空一切">
+
+    <!--提交按钮
+    作用：将表单中已经填写好的数据，提交到远程服务器
+    注意点：要想把表单中填写好的数据提交到远程服务器，必须具备两个条件：
+    1.需要给form表单添加一个action属性，通过这个action属性指定需要提交到的服务器地址
+    2.需要给需要提交到服务器的表单元素添加一个name属性
+    -->
+    <input type="submit">
+
+    <!--隐藏域
+    作用：配合提交按钮将一些数据默默地提交到服务器
+    Ajax
+    -->
+    <input type="hidden" name="cc" value="3232">
+</form>
+</body>
+</html>

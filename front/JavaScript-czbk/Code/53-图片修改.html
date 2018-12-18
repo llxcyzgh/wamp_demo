@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>53-图片修改</title>
+    <style>
+        #yoona{
+            width: 50px;
+        }
+    </style>
+    <script>
+        function fuk(){
+            var obj=document.getElementById("yoona");
+            var wid=obj.style.width;
+//            wid=wid*10;
+            obj.style.width=wid+500px;
+
+        }
+    </script>
+</head>
+<body>
+<img src="images/20170109yonna.jpg" alt="missing" id="yoona" title="wftc">
+<input type="button" id="but1" value="点击放大图片" onclick="fuk()">
+</body>
+</html>

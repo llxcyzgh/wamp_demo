@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-JQ1-jq环境设置</title>
+    <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div>
+    abcd
+</div>
+
+<input type="button" id="d1" value="按钮1，点击变色" onclick="fuk()">
+<input type="button" id="d2" value="按钮2，点击变色">
+<input type="button" id="d3" value="按钮3，点击弹出div的内容">
+<script>
+    function fuk(){
+        var obj=document.getElementById("d1");
+        obj.style.background="red";
+    }
+    $("#d2").click(function (){
+        $("#d2").css({background:"blue"});
+    });
+    $("#d3").click(function(){
+        alert($("div").html());
+    });
+
+</script>
+
+
+
+</body>
+</html>

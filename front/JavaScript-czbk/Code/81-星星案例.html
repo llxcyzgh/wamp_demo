@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>81-星星案例</title>
+    <style>
+        #span3{
+            box-sizing: border-box;
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+        #span4{
+            display: inline-block;
+            background: #ff2dca;
+            height: 20px;
+        }
+
+    </style>
+    <script>
+//        window.onload=init;
+var dingshiqi,dingshiqi2,obj_span4,count=0;
+        function startGame(){
+            window.clearInterval(dingshiqi);
+            window.clearInterval(dingshiqi2);
+            dingshiqi=window.setInterval("star()",1000);
+            dingshiqi2=window.setInterval("jishi()",1000);
+        }
+        function star(){
+            //创建星星
+            var obj=document.createElement("img");
+            //给星星添加src属性
+            obj.src="images/20170109star.png";
+//怎么禁止图片拖动？？？？？            obj.draggable="false";
+            //随机星星大小
+            obj.width=Math.floor(Math.random()*50+50);
+            //随机位置
+            var x=Math.floor(Math.random()*1166+50);
+            var y=Math.floor(Math.random()*500+50);
+            obj.style.position="absolute";
+            obj.style.top=y+"px";
+            obj.style.left=x+"px";
+            //放到body中
+            document.body.appendChild(obj);
+            //给星星的数量计数
+            count++;
+            //通过星星的数量给进度条添加进度
+            obj_span4=document.getElementById("span4");
+            obj_span4.style.width=5*count+"px";
+            //判断星星的总数
+            if(count>20){
+                alert("游戏结束");
+                location.reload();
+            }
+//            添加点击事件
+            obj.onclick=removestar;
+            //点击删除星星的函数
+            function removestar(){
+                this.parentNode.removeChild(this);
+                count--;
+                obj_span4.style.width=5*count+"px";
+
+            }
+        }
+        //点击暂停游戏的函数
+        function stopGame(){
+//            window.clearInterval(dingshiqi);
+            alert("暂停游戏");
+        }
+        function jishi(){
+            var obj_sec=document.getElementById("span2");
+            var obj_min=document.getElementById("span1");
+            var sec=parseInt(obj_sec.innerHTML);
+            var min=parseInt(obj_min.innerHTML);
+            sec++;
+            if(sec==60){
+                min++;
+                sec=0;
+            }
+            obj_sec.innerHTML=sec;
+            obj_min.innerHTML=min;
+        }
+
+    </script>
+</head>
+<body>
+<input type="button" value="点击开始游戏" onclick="startGame()">
+<input type="button" value="点击暂停游戏" onclick="stopGame()">
+<div>游戏进行了<span id="span1">0</span>分<span id="span2">0</span>秒</div>
+<div>剩余星星的个数： 0 <span id="span3"><span id="span4"></span></span> 20</div>
+</body>
+</html>

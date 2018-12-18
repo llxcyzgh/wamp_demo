@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>34-表单练习</title>
+</head>
+<body>
+<h1>注册界面</h1>
+
+<form>
+    <!--明文、暗文表单-->
+    <label for="zhanghao">账号：</label>
+    <input type="text" id="zhanghao"><br/><br/>
+    <label for="mima">密码：</label>
+    <input type="password" id="mima"><br/><br/>
+
+    <!--单选、多选表单-->
+    <!--单选框和复远框都需要指定相同的name值-->
+    性别：<input type="radio" name="gender">男 <input type="radio" name="gender">女 <input type="radio" name="gender" checked="checked">保密
+    <br/>
+    爱好：<input type="checkbox">篮球 <input type="checkbox">足球 <input type="checkbox" checked="checked">足浴
+    <br>
+
+    <!--多行文本框-->
+    个人简介：<textarea id="" cols="30" rows="5"></textarea>
+    <br><br>
+
+    <!--data、email、number-->
+    生日：<input type="date"><br><br>
+    邮箱：<input type="email"><br><br>
+    手机：<input type="number"><br><br>
+    
+    <!--submit、reset-->
+    <input type="submit" value="注册">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="reset" value="清空">
+
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22-表格标签的属性-css</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            /*宽高最好由td来设置*/
+            /*width: 50%;*/
+            /*height: 300px;*/
+            border: 1px solid #000;
+            margin: 30px auto;
+            /*border-collapse: collapse;*/
+        /*边框和边框之间的距离 border-spacing: 50px;*/
+            border-spacing: 50px;
+            background-color: #ff0;
+
+        }
+        table td{
+            text-align: center;
+            vertical-align: bottom;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            padding: 20px;
+            background-color: #0ff;
+            /*box-sizing: border-box;*/
+        }
+        .line2{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td class="line1">1-1</td>
+        <td class="line2">1-2</td>
+    </tr>
+    <tr>
+        <td class="line1">2-1</td>
+        <td class="line2">2-2</td>
+    </tr>
+</table>
+</body>
+</html>

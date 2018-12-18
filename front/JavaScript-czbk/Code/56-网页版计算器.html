@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>56-网页版计算器</title>
+    <script>
+        function fuk(){
+            var value1=document.getElementById("text1").value;
+            var value2=document.getElementById("text2").value;
+            var obj3=document.getElementById("text3");
+//            alert(typeof (obj1));  从body中获取的内容是字符串类型
+            var fuhao1=document.getElementById("sele");
+            var fh=fuhao1.value;
+            if(fh=="+"){
+                obj3.value=parseFloat(value1)+parseFloat(value2);
+            }else if(fh=="-"){
+                obj3.value=parseFloat(value1)-parseFloat(value2);
+            }else if(fh=="*"){
+                obj3.value=parseFloat(value1)*parseFloat(value2);
+            }else if(fh=="/"){
+                obj3.value=parseFloat(value1)/parseFloat(value2);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="number" id="text1">
+<select id="sele">
+    <option id="opt1">+</option>
+    <option id="opt2">-</option>
+    <option id="opt3">*</option>
+    <option id="opt4">/</option>
+</select>
+
+<input type="number" id="text2"> =
+<input type="number" id="text3">
+<input type="button" value="点击计算" onclick="fuk()">
+</body>
+</html>

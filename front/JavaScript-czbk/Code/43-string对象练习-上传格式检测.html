@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>43-string对象练习-上传格式检测</title>
+    <script>
+      function fn(){
+          //检测用户上传的文件是否符合要求【.jpg, .png, .gif】
+         var obj=document.getElementById("d1");//obj代表的是id为d1的input按钮
+          var zhi=obj.value;//img.jpg=zhi
+          //1. 先找到点的位置
+          //2. 找到点的位置之后截取点后面的内容，就是要寻找的后缀
+          var dian=zhi.lastIndexOf(".");//找到了点的位置
+          var houzhui=zhi.substr(dian+1);//.jpg or jpg
+          houzhui=houzhui.toLowerCase();
+//          如果后缀==jpg||如果后缀=png||如果后缀==gif
+          if(houzhui=="jpg"||houzhui=="png"||houzhui=="gif"){
+              alert("上传成功");
+          }else {
+              alert("格式不正确");
+          }
+      }
+    </script>
+</head>
+<body>
+<input type="file" id="d1">
+<input type="button" id="d2" value="点击提交" onclick="fn()">
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>34-表单练习2</title>
+</head>
+
+<body>
+
+
+
+<form action="http://33-表单标签3.html">
+    <fieldset>
+        <legend>注册界面</legend>
+        <p>
+            <label for="zhanghao">账号：</label>
+            <input type="text" id="zhanghao" name="account">
+        </p>
+        <p>
+            <label for="mima">密码：</label>
+            <input type="password" id="mima" name="password">
+        </p>
+        <p>
+            性别：
+            <input type="radio" name="xingbie" value="male">男
+            <input type="radio" name="xingbie" value="female">女
+            <input type="radio" name="xingbie" value="secret" checked="checked">保密
+        </p>
+        <p>
+            <!--
+            注意点：单选框和多选框的name都需要指定相同一name值
+            -->
+            爱好：
+            <input type="checkbox" name="sport" value="basketball">篮球
+            <input type="checkbox" name="sport" value="football">足球
+            <input type="checkbox" name="sport" value="crazy" checked="checked">足浴
+        </p>
+        <p>
+            <label for="gerenjianjie">个人简介：</label>
+            <textarea id="gerenjianjie" cols="25" rows="5" name="gerenjianjie"></textarea>
+        </p>
+        <p>
+            生日：<input type="date" name="birthday">
+        </p>
+        <p>
+            手机：<input type="number" name="phone">
+        </p>
+        <p>
+            邮箱：<input type="email" name="email">
+        </p>
+        <p>
+            <input type="submit" value="点击注册">
+            &nbsp;    &nbsp;    &nbsp;    &nbsp;
+            <input type="reset" value="点击清空">
+        </p>
+</fieldset>
+</form>
+
+<!--
+除了按钮类型的input以外，其它的的标签都可以通过一个value属性来指定将来提交到服务器的值
+
+按钮input中的value表示“按钮显示的名称”
+文本框中的value表示“网页中默认的填值”
+选择框（单选和多选）中的value用于提交到服务器的值
+
+account=ing&
+password=123&
+xingbie=male&
+sport=basketball&sport=crazy&
+gerenjianjie=just+do+it&
+birthday=2016-12-06&
+phone=123456789&
+email=123%40qq
+-->
+</body>
+</html>

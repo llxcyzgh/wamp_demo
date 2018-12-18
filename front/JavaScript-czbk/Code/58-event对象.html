@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>58-event对象</title>
+    <script>
+        function fuk(e){
+           /* var obj=document.getElementById("but1");
+            alert(obj.value);*/
+            alert(e.target.value);
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="点击" id="but1" onclick="fuk(event)">
+<input type="button" value="点击" id="but1" onclick="fuk(event)">
+<input type="button" value="点击" id="but1" onclick="fuk(event)">
+<input type="button" value="点击" id="but1" onclick="fuk(event)">
+<input type="button" value="点击" id="but1" onclick="fuk(event)">
+<input type="button" value="点击" id="but1" onclick="fuk(event)">
+</body>
+</html>

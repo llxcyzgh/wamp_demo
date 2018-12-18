@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <a href="http://www.hao123.com">a标签</a>
+
+    <script>
+        $(function(){
+            $('a').click(function(){
+                alert('ok');
+                var $res = confirm('真的要跳转吗?');
+                if(!$res){
+                    // $(this).href('');
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>39-二维数组</title>
+    <script>
+        var arr=[
+                [24,26,28,29,50,40],
+                [23,25,28,22],
+                [24,26,27,28]
+       /*         [0,0,0,0],
+                [0,0,0,0],
+                [0,0,0,1]   */
+        ];
+ //       document.write(arr[0].length+"<br>");
+//        document.write(arr[i].length+"<br>");
+        var s=0;
+        for(var i=0;i<=arr.length-1;i++){
+            for(var j=0;j<=arr[i].length-1;j++){
+                s=s+arr[i][j];
+            }
+        }
+        document.write(s)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

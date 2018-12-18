@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>71-网易注册界面2</title>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+        .header{
+            box-sizing: border-box;
+            width: 960px;
+            height: 80px;
+            /*background-color: red;*/
+            margin: 0 auto;
+            padding-top: 28px;
+        }
+        .header .logo{
+            width: 644px;
+            height: 28px;
+            background:  url(image/20161220neteasysprite.png) 0 0 no-repeat;
+            float: left;
+            /*父子关系尽量不用小盒子的margin，用大盒子的padding*/
+            /*margin-top: 28px;*/
+        }
+        .header .logo a{
+            display: inline-block;
+            width: 130px;
+            height: 29px;
+            /*background-color: blue;*/
+        }
+        .header .links{
+            width: 200px;
+            height: 29px;
+            float: right;
+            text-align: right;
+
+        }
+        /*a标签没有继承性，去掉超链接的下划线要写到a标签中*/
+        .header .links a{
+            text-decoration: none;
+            color:#aaa;
+            line-height: 29px;
+
+        }
+        .content{
+            box-sizing: border-box;
+            width: 960px;
+            height: 600px;
+            background-color: green;
+            margin: 0 auto;
+
+        }
+        .footer{
+            box-sizing: border-box;
+            width: 960px;
+            height: 50px;
+            background-color: blue;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        <a href="#" title="网易163免费邮"></a><a href="#" title="网易126免费邮"></a><a href="#" title="网易Yeah.net免费邮"></a>
+    </div>
+    <div class="links">
+        <a href="">了解更多</a>
+        |
+        <a href="">反馈意见</a>
+    </div>
+</div>
+<div class="content"></div>
+<div class="footer"></div>
+</body>
+</html>

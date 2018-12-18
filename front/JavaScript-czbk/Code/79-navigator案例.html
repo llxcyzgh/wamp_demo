@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>79-navigator案例</title>
+    <script>
+        //打开页面之后，弹出用户用的是什么浏览器
+        window.onload=init;
+        function init(){
+            var obj=window.navigator.userAgent;
+
+            if(obj.indexOf("Firefox")>0){
+                alert("用的浏览器是Firefox");
+            }else if(obj.indexOf("Chrome")>0){
+                alert("用的浏览器是Chrome");
+            }else {
+                alert("IE")
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

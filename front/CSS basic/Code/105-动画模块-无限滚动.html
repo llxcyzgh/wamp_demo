@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>105-动画模块-无限滚动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 600px;
+            height: 188px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        ul {
+            width: 20000px;
+            height: 188px;
+            background-color: #000;
+            animation: move 10s linear infinite normal;
+        }
+
+        ul:hover {
+            animation-play-state: paused;
+        }
+
+        ul:hover li {
+            opacity: 0.5;
+        }
+
+        ul li {
+            list-style: none;
+            width: 300px;
+            height: 188px;
+            background-color: #f00;
+            border: 1px solid #000;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        ul li:hover {
+            opacity: 1;
+        }
+
+        @keyframes move {
+            from {
+                margin-left: 0;
+            }
+            to {
+                margin-left: -1200px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="image/20170216_banner1.png" alt="missing"></li>
+        <li><img src="image/20170216_banner2.jpg" alt="missing"></li>
+        <li><img src="image/20170216_banner3.jpg" alt="missing"></li>
+        <li><img src="image/20170216_banner4.jpg" alt="missing"></li>
+        <li><img src="image/20170216_banner1.png" alt="missing"></li>
+        <li><img src="image/20170216_banner2.jpg" alt="missing"></li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>90-过渡模块连写</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div {
+            width: 100px;
+            height: 50px;
+            background: #f00;
+            /*transition-property: width;*/
+            /*transition-duration: 5s;*/
+      /*      transition: width 5s linear 0s,height 5s linear 0s,background-color 5s linear 0s;*/
+            transition: all 5s linear 2s;
+        }
+        div:hover{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.过渡连写格式
+transition: width 5s linear 0s;
+transition: 过渡属性 过渡时长 运动速度 延迟时间;
+
+2.过渡连写注意点
+2.1 和分开写一样，如果想给多个属性添加过渡效果也是用逗号隔开即可
+2.2 连写的时候可以省略后面的两个参数，因为只要编写了前面的两个参数就已经满足了过渡的三要素
+2.3 如果多个属性持续时间/运动的速度/延迟的时间都一样，那么可以简写为
+transition:all 0s;
+-->
+<div></div>
+</body>
+</html>

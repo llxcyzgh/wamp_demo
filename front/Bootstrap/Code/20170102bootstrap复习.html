@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--    name="viewport" -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>20160102bootstrap复习</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <style>
+        .box0{
+            width: 800px;
+            height: 200px;
+            background: #e2b6ff;
+            border: 1px solid #000;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            border: 10px solid #000;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: #0f0;
+            border: 10px dotted gold;
+        }
+    </style>
+</head>
+<body style="background: #888;">
+<div class="container" style="background: #fff;">
+    <!--导航-->
+    <nav class="navbar navbar-default">网址导航</nav>
+    <!--响应式栅格列-->
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">1111111</div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">2222222</div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">3333333</div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">4444444</div>
+    </div>
+    <!--文本及文本背景颜色-->
+    <p class="text-muted">文本颜色</p>
+    <p class="text-primary">文本颜色</p>
+    <p class="text-info">文本颜色</p>
+    <p class="text-success">文本颜色</p>
+    <p class="text-warning">文本颜色</p>
+    <p class="text-danger">文本颜色</p>
+    <p class="bg-primary">文本背景颜色</p>
+    <p class="bg-info">文本背景颜色</p>
+    <p class="bg-success">文本背景颜色</p>
+    <p class="bg-warning">文本背景颜色</p>
+    <p class="bg-danger">文本背景颜色</p>
+    <!--文本格式-->
+    <strong>加粗</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <em>斜体</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <ins>下划线</ins>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <del>删除线</del>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!--下拉按钮和三角-->
+    <div class="dropdown">
+        <button class="btn btn-primary" data-toggle="dropdown">
+            下拉三角<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li>65456</li>
+            <li>65456</li>
+            <li class="divider"></li>
+            <li>65456</li>
+            <li>65456</li>
+        </ul>
+    </div>
+    
+    <!--快速浮动及清除浮动-->
+    <div class="box0 clearfix">
+        <div class="box1 pull-left"></div>
+        <div class="box2 pull-right"></div>
+        <p>dfhkj这里输入文字</p>
+    </div>
+    这里输入文字
+
+    <!--表格-->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped table-condensed">
+            <tr class="success">
+                <td></td>
+                <td>星期一</td>
+                <td>星期二</td>
+                <td>星期三</td>
+                <td>星期四</td>
+                <td>星期五</td>
+                <td>星期六</td>
+                <td>星期日</td>
+            </tr>
+            <tr class="danger">
+                <td>上午</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>下午</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>晚上</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+    </div>
+
+
+    <!--响应式表单-->
+    <div class="form-group">
+        <label for="xingming">name</label>
+        <input type="text" id="xingming" class="form-control" name="xm">
+    </div>
+    <div class="form-group">
+        <label for="mima">password</label>
+        <input type="password" id="mima" name="mm" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="grjj">个人简介</label>
+        <textarea name="gr" id="grjj" rows="5" class="form-control"></textarea>
+    </div>
+    <!--单选框-->
+    <div class="form-group">
+        性别：
+        <label class="radio-inline"><input type="radio" value="male" name="xb">男</label>
+        <label class="radio-inline"><input type="radio" value="female" name="xb">女</label>
+        <label class="radio-inline"><input type="radio" value="secret" name="xb">保密</label>
+    </div>
+
+    <!--多选框-->
+    <div class="form-group">
+        爱好：
+        <label class="checkbox-inline"><input type="checkbox" value="lq" name="hobby">篮球</label>
+        <label class="checkbox-inline"><input type="checkbox" value="zq" name="hobby">足球</label>
+        <label class="checkbox-inline"><input type="checkbox" value="pq" name="hobby">排球</label>
+    </div>
+
+    <!--输入框组-->
+        <div class="from-group">
+            <div class="input-group">
+                <span class="input-group-addon"><label for="ss" class="glyphicon glyphicon-search"></label></span>
+                <input type="search" class="form-control" name="ss" id="ss">
+            </div>
+        </div>
+    <hr>
+        <div class="form-group">
+            <div class="input-group">
+                <input type="search" class="form-control" name="ss" id="ss1">
+                <span class="input-group-addon"><label for="ss1" class="glyphicon glyphicon-bell"></label></span>
+            </div>
+        </div>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="xm1" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 text-right">姓名: </label>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                <input type="text" class="form-control" id="xm1">
+            </div>
+        </div>
+    </form>
+
+
+<!--标签页-->
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#">111111标签1</a></li>
+        <li><a href="#">2222222222标签2</a></li>
+        <li><a href="#">333333333333333333标签3</a></li>
+    </ul>
+
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#">111111标签1</a></li>
+        <li><a href="#">2222222222标签2</a></li>
+        <li><a href="#">333333333333333333标签3</a></li>
+    </ul>
+
+    <ul class="nav nav-tabs nav-stacked">
+        <li class="active"><a href="#">111111标签1</a></li>
+        <li><a href="#">2222222222标签2</a></li>
+        <li><a href="#">333333333333333333标签3</a></li>
+    </ul>
+
+</div>
+</body>
+</html>

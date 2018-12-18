@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var $box = $('div');
+        console.log($box);
+        // jsbox = $box.get(0); // jq对象转成js对象
+        jsbox = $box[0]; // jq对象转成js对象
+        console.log(jsbox);
+
+
+        var box = document.getElementsByTagName('div');
+        console.log(box);
+        $jqbox = $(box); // js对象转成jq对象
+        console.log($jqbox);
+
+
+    });
+    </script>
+</body>
+
+</html>
